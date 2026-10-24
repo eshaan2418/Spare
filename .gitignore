@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.pyc
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+# raw personal photos never committed
+data/real/**/*.jpg
+data/real/**/*.jpeg
+data/real/**/*.png
+data/real/**/*.heic
+data/real/**/*.HEIC
+data/real/**/*.JPG
+# large generated artifacts
+data/synthetic/**
+!data/synthetic/README.md
+checkpoints/
+results/**/*.stl
+results/**/*.step
+results/**/*.gcode
+results/**/*.npz
+*.safetensors
+.env

@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: spare
+Version: 0.1.0
+Summary: Function-first replacement-part CAD generation from phone photos
+Requires-Python: <3.13,>=3.12
+Requires-Dist: cadquery==2.8.0
+Requires-Dist: numpy==2.5.4
+Requires-Dist: scipy==1.18.1
+Requires-Dist: opencv-contrib-python==5.0.0.93
+Requires-Dist: trimesh==5.1.1
+Requires-Dist: manifold3d==3.5.4
+Requires-Dist: gmsh==4.15.2
+Requires-Dist: scikit-fem==12.0.2
+Requires-Dist: shapely==2.2.0
+Requires-Dist: rtree==1.4.1
+Requires-Dist: pyyaml==6.0.3
+Provides-Extra: dev
+Requires-Dist: pytest==9.1.1; extra == "dev"
+Requires-Dist: ruff==0.17.1; extra == "dev"
+Requires-Dist: mypy==2.4.0; extra == "dev"
+Provides-Extra: ml
+Requires-Dist: mlx==0.32.4; extra == "ml"
+Requires-Dist: mlx-lm==0.32.0; extra == "ml"

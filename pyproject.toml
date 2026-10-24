@@ -1,0 +1,48 @@
+[project]
+name = "spare"
+version = "0.1.0"
+description = "Function-first replacement-part CAD generation from phone photos"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "cadquery==2.8.0",
+  "numpy==2.5.4",
+  "scipy==1.18.1",
+  "opencv-contrib-python==5.0.0.93",
+  "trimesh==5.1.1",
+  "manifold3d==3.5.4",
+  "gmsh==4.15.2",
+  "scikit-fem==12.0.2",
+  "shapely==2.2.0",
+  "rtree==1.4.1",
+  "pyyaml==6.0.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1", "ruff==0.17.1", "mypy==2.4.0"]
+ml = ["mlx==0.32.4", "mlx-lm==0.32.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["spare*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "B905"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+check_untyped_defs = false
+warn_unused_ignores = false
+exclude = ["data/", "results/"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: long-running", "slicer: needs PrusaSlicer CLI"]
