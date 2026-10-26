@@ -1,0 +1,89 @@
+{
+  "seed": 0,
+  "families": {
+    "spacer": "train",
+    "knob_dshaft": "train",
+    "cap_round": "train",
+    "wheel_grooved": "train",
+    "battery_cover": "train",
+    "l_bracket": "train",
+    "cable_clip": "train",
+    "shelf_peg": "train",
+    "hook": "val",
+    "hinge_leaf": "test",
+    "rack_clip": "test",
+    "end_cap_rect": "test"
+  },
+  "train": {
+    "generated": 50000,
+    "checked": 50000,
+    "exec_fail": 11,
+    "kept": 49989
+  },
+  "test_id": {
+    "generated": 200,
+    "checked": 200,
+    "exec_fail": 0,
+    "kept": 200
+  },
+  "val": {
+    "generated": 100,
+    "checked": 100,
+    "exec_fail": 0,
+    "kept": 100
+  },
+  "test": {
+    "generated": 180,
+    "checked": 180,
+    "exec_fail": 0,
+    "kept": 180
+  },
+  "exec_seconds": 575.4,
+  "manifest": {
+    "seed": 0,
+    "git_commit": "7a7a8414b382a698208582511fdf68354d3030aa",
+    "created": "2026-10-26T17:55:28",
+    "files": {
+      "train": {
+        "path": "data/synthetic/train.jsonl",
+        "sha256": "81f2d9b56b6e70396d74f9f15673ee2623bc5b9370449009d83a6ad905a8a122",
+        "n": 49989
+      },
+      "test_id": {
+        "path": "data/benchmarks/test_id.jsonl",
+        "sha256": "aba5a2ea21aae2284ab9a80864e6173939d5465a8b14f1a7171158ee1642eba5",
+        "n": 200
+      },
+      "val": {
+        "path": "data/benchmarks/val.jsonl",
+        "sha256": "ca69f725869ff7ebeb30d047e1db9cdb76249ed31db799564536fc5224325ebd",
+        "n": 100
+      },
+      "test": {
+        "path": "data/benchmarks/test.jsonl",
+        "sha256": "104f7b3f07c853b330aef10db01220cdb3f96ad1c92526e78bd898f8dc294b76",
+        "n": 180
+      }
+    },
+    "split_by_family": {
+      "train": [
+        "battery_cover",
+        "cable_clip",
+        "cap_round",
+        "knob_dshaft",
+        "l_bracket",
+        "shelf_peg",
+        "spacer",
+        "wheel_grooved"
+      ],
+      "val": [
+        "hook"
+      ],
+      "test": [
+        "end_cap_rect",
+        "hinge_leaf",
+        "rack_clip"
+      ]
+    }
+  }
+}

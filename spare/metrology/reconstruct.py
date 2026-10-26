@@ -249,7 +249,7 @@ def _edge_along(gray_f: np.ndarray, gx: np.ndarray, gy: np.ndarray, p: np.ndarra
     """Sub-pixel position of the strongest gradient along normal n through p (parabolic peak)."""
     ts = np.arange(-search, search + 0.5, 0.5)
     q = p[None] + ts[:, None] * n[None]
-    h, w = gray_f.shape
+    h, w = gx.shape
     if (q[:, 0] < 1).any() or (q[:, 1] < 1).any() or (q[:, 0] >= w - 2).any() or (q[:, 1] >= h - 2).any():
         return None
     mx = cv2.remap(gx, q[:, 0].astype(np.float32)[None], q[:, 1].astype(np.float32)[None], cv2.INTER_LINEAR)[0]
@@ -263,6 +263,138 @@ def _edge_along(gray_f: np.ndarray, gx: np.ndarray, gy: np.ndarray, p: np.ndarra
     off = 0.5 * (a - c) / den if abs(den) > 1e-9 else 0.0
     return p + (ts[k] + off * 0.5) * n
 
+
+def _grad_images(images, views):
+    out = {}
+    for i, v in enumerate(views):
+        if v is None:
+            continue
+        gray = cv2.GaussianBlur(cv2.cvtColor(images[i], cv2.COLOR_BGR2GRAY).astype(np.float32), (0, 0), 1.2)
+        out[i] = (cv2.Sobel(gray, cv2.CV_32F, 1, 0, ksize=3), cv2.Sobel(gray, cv2.CV_32F, 0, 1, ksize=3))
+    return out
+
+
+def outline_points(h: Hull, step: float = 0.6, fp: np.ndarray | None = None) -> tuple[np.ndarray, np.ndarray]:
+    """Outer + inner footprint contour points (world XY) with outward 2D normals, resampled every ``step`` mm."""
+    fp = footprint_image(h) if fp is None else fp.astype(np.uint8)
+    cnts, _ = cv2.findContours(fp.T.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
+    P, N = [], []
+    for c in cnts:
+        q = h.origin[:2] + c.reshape(-1, 2).astype(float) * h.voxel
+        if len(q) < 8:
+            continue
+        k = max(1, int(round(step / h.voxel)))
+        q = q[::k]
+        t = np.roll(q, -1, 0) - np.roll(q, 1, 0)
+        n = np.c_[t[:, 1], -t[:, 0]]
+        n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-9
+        # orient outward: a step along +n must leave the footprint
+        probe = np.round((q + 1.5 * h.voxel * n - h.origin[:2]) / h.voxel).astype(int)
+        ins = np.zeros(len(q), bool)
+        okp = (probe[:, 0] >= 0) & (probe[:, 1] >= 0) & (probe[:, 0] < fp.shape[0]) & (probe[:, 1] < fp.shape[1])
+        ins[okp] = fp[probe[okp, 0], probe[okp, 1]] > 0
+        if ins.mean() > 0.5:
+            n = -n
+        P.append(q)
+        N.append(n)
+    if not P:
+        return np.zeros((0, 2)), np.zeros((0, 2))
+    return np.vstack(P), np.vstack(N)
+
+
+def edge_score_at_height(P2: np.ndarray, N2: np.ndarray, z: float, views, grads, min_cam_z: float = 0.0) -> float:
+    """Mean directional image gradient at the projection of the outline lifted to height z."""
+    scores = []
+    P3 = np.c_[P2, np.full(len(P2), z)]
+    Q3 = np.c_[P2 + 0.5 * N2, np.full(len(P2), z)]
+    for i, (gx, gy) in grads.items():
+        v = views[i]
+        if v.center[2] < z + min_cam_z:
+            continue
+        a = project_fast(v, P3)
+        b = project_fast(v, Q3)
+        d = b - a
+        d /= np.linalg.norm(d, axis=1, keepdims=True) + 1e-9
+        hh, ww = gx.shape
+        ok = (a[:, 0] > 1) & (a[:, 1] > 1) & (a[:, 0] < ww - 2) & (a[:, 1] < hh - 2)
+        if ok.sum() < 10:
+            continue
+        mx = cv2.remap(gx, a[ok, 0].astype(np.float32)[None], a[ok, 1].astype(np.float32)[None], cv2.INTER_LINEAR)[0]
+        my = cv2.remap(gy, a[ok, 0].astype(np.float32)[None], a[ok, 1].astype(np.float32)[None], cv2.INTER_LINEAR)[0]
+        g = np.abs(mx * d[ok, 0] + my * d[ok, 1])
+        scores.append(float(np.mean(np.minimum(g, 120.0))))
+    return float(np.mean(scores)) if scores else 0.0
+
+
+def _sweep_outline(P2, N2, views, grads, z_lo, z_hi, step=0.1, rel=0.6):
+    zs = np.arange(z_lo, z_hi + 0.5 * step, step)
+    if len(zs) < 5 or len(P2) < 10:
+        return None, 0.0, np.zeros((0, 2))
+    sc = np.array([edge_score_at_height(P2, N2, z, views, grads) for z in zs])
+    sc_s = np.convolve(sc, np.ones(3) / 3, mode="same")
+    sc_s[0], sc_s[-1] = sc[0], sc[-1]
+    thr = sc_s.max() * rel
+    k_best = int(np.argmax(sc_s))
+    for k in range(len(zs) - 2, 0, -1):
+        if sc_s[k] >= thr and sc_s[k] >= sc_s[k - 1] and sc_s[k] >= sc_s[k + 1]:
+            k_best = k
+            break
+    k = int(np.clip(k_best, 1, len(zs) - 2))
+    a, b, c = sc_s[k - 1], sc_s[k], sc_s[k + 1]
+    den = a - 2 * b + c
+    off = 0.5 * (a - c) / den if abs(den) > 1e-9 else 0.0
+    contrast = float(sc_s[k] / (np.median(sc_s) + 1e-6))
+    return float(zs[k] + np.clip(off, -1, 1) * step), contrast, np.c_[zs, sc_s]
+
+
+def top_height_sweep(images, views, h: Hull, grads=None, z_min: float = 0.8, step: float = 0.1,
+                     rel: float = 0.6, view_idx: list[int] | None = None) -> tuple[float, np.ndarray]:
+    """Plane-sweep the footprint outline in height. The visual hull cannot bound flat tops without
+    near-horizontal views (it inflates by ~r*tan(elevation)), but the top outline aligns with image edges in
+    every view only at its true height. Uses the full-footprint outline: accurate for single-level parts;
+    raised features much smaller than the footprint (tabs, knuckles) are under-estimated -- a documented
+    limitation (results/m1); per-level sweeps were tried and rejected because hull level-set contours
+    produce spurious edge peaks. Returns (height, score curve)."""
+    grads = grads if grads is not None else _grad_images(images, views)
+    if view_idx is not None:
+        grads = {k: g for k, g in grads.items() if k in set(view_idx)}
+    P2, N2 = outline_points(h)
+    z, _, curve = _sweep_outline(P2, N2, views, grads, z_min, h.height, step, rel)
+    if z is None:
+        return h.height, np.zeros(0)
+    return z, curve
+
+
+def refine_outline(P2: np.ndarray, N2: np.ndarray, z: float, views, grads, search_px: float = 5.0
+                   ) -> tuple[np.ndarray, np.ndarray]:
+    """Sub-pixel outline points on the plane z, pooled over views (world XY), and each point's signed
+    offset (mm) from the hull outline along the outward normal (negative = hull was inflated)."""
+    out, offs = [], []
+    P3 = np.c_[P2, np.full(len(P2), z)]
+    Q3 = np.c_[P2 + 0.5 * N2, np.full(len(P2), z)]
+    for i, (gx, gy) in grads.items():
+        v = views[i]
+        if v.center[2] < z + 20:
+            continue
+        a = project_fast(v, P3)
+        b = project_fast(v, Q3)
+        pts, src = [], []
+        for k, (p, q) in enumerate(zip(a, b)):
+            n = q - p
+            nn = np.linalg.norm(n)
+            if nn < 1e-6:
+                continue
+            e = _edge_along(None, gx, gy, p, n / nn, search_px)
+            if e is not None:
+                pts.append(e)
+                src.append(k)
+        if len(pts) >= 10:
+            W = backproject_to_plane(np.array(pts), v, z)[:, :2]
+            out.append(W)
+            offs.append(((W - P2[src]) * N2[src]).sum(1))
+    if not out:
+        return np.zeros((0, 2)), np.zeros(0)
+    return np.vstack(out), np.concatenate(offs)
 
 def refine_circle(c: Circle, images, views, view_idx=None, n_samples: int = 72, search_px: float = 5.0) -> Circle:
     """Refine centre/diameter using sub-pixel edges on the circle's plane z=c.z in every view that
@@ -353,28 +485,55 @@ def detect_flat(P: np.ndarray, cx: float, cy: float, r: float, min_span_deg: flo
     return off if 0 < off < r else None
 
 
+def clip_hull(h: Hull, z_top: float) -> Hull:
+    occ = h.occ.copy()
+    zc = h.origin[2] + np.arange(occ.shape[2]) * h.voxel
+    occ[:, :, zc > z_top] = False
+    return Hull(occ, h.origin, h.voxel)
+
+
+def _pca_extents(xy: np.ndarray, Vt: np.ndarray, c: np.ndarray, q: float = 0.5) -> np.ndarray:
+    pr = (xy - c) @ Vt.T
+    return np.percentile(pr, 100 - q, axis=0) - np.percentile(pr, q, axis=0)
+
+
 def measure_part(images: list[np.ndarray], cal: Calibration, voxel: float = 0.3, n_boot: int = 8,
                  masks: list[np.ndarray] | None = None) -> tuple[PartMeasurement, Hull, list[np.ndarray]]:
     views = cal.views
     if masks is None:
         masks = [segment(im, v) if v is not None else np.zeros(im.shape[:2], np.uint8) for im, v in zip(images, views)]
-    hull = visual_hull(masks, views, voxel)
-    pts = hull.points()
+    hull0 = visual_hull(masks, views, voxel)
     meas_notes: list[str] = []
-    if len(pts) == 0:
-        return PartMeasurement(0, 0, 0, 0, 0, notes=["empty hull"]), hull, masks
+    if len(hull0.points()) == 0:
+        return PartMeasurement(0, 0, 0, 0, 0, notes=["empty hull"]), hull0, masks
+    grads = _grad_images(images, views)
+    z_top, _ = top_height_sweep(images, views, hull0, grads)
+    if z_top < hull0.height - voxel:
+        meas_notes.append(f"height from edge plane-sweep ({z_top:.2f}) < hull ({hull0.height:.2f})")
+    hull = clip_hull(hull0, z_top)
+    pts = hull.points()
     xy = pts[:, :2]
     c = xy.mean(0)
     U, S, Vt = np.linalg.svd(xy - c, full_matrices=False)
-    proj = (xy - c) @ Vt.T
-    ext = proj.max(0) - proj.min(0) + voxel
+    P2, N2 = outline_points(hull)
+    hull_ext = (_pca_extents(P2, Vt, c, 1.0) + voxel) if len(P2) > 20 else (_pca_extents(xy, Vt, c, 0.0) + voxel)
+    _, offs = refine_outline(P2, N2, z_top, views, grads)
+    if len(offs) > 30:
+        # robust: hull extent corrected by the median sub-pixel offset of the top outline (outliers = shadows)
+        ext = hull_ext + 2 * float(np.clip(np.median(offs), -1.5, 0.3))
+    else:
+        ext = hull_ext
+        meas_notes.append("extent from hull only")
     fp_area = float(footprint_image(hull).sum() * voxel * voxel)
-    circles = [refine_circle(ci, images, views) for ci in circles_from_hull(hull)]
-    m = PartMeasurement(height=hull.height, extent_major=float(ext[0]), extent_minor=float(ext[1]),
+    circles = []
+    for ci in circles_from_hull(hull):
+        ci.z = min(ci.z, z_top)
+        circles.append(refine_circle(ci, images, views))
+    m = PartMeasurement(height=z_top, extent_major=float(ext[0]), extent_minor=float(ext[1]),
                         axis_angle_deg=float(np.degrees(np.arctan2(Vt[0, 1], Vt[0, 0]))), footprint_area=fp_area,
                         circles=circles, n_views_used=sum(v is not None for v in views), calib_rms_px=cal.rms_px,
                         notes=meas_notes)
-    # bootstrap the hull-level measurements over views
+    # bootstrap the measurements over views
     used = [i for i, v in enumerate(views) if v is not None]
     rng = np.random.default_rng(1)
     hs, e0, e1 = [], [], []
@@ -382,16 +541,18 @@ def measure_part(images: list[np.ndarray], cal: Calibration, voxel: float = 0.3,
         sub = sorted(set(rng.choice(used, len(used), replace=True).tolist()))
         if len(sub) < 3:
             continue
-        hb = visual_hull(masks, views, voxel * 1.5, view_idx=sub, allow_miss=1 if len(sub) > 4 else 0)
-        pb = hb.points()
-        if len(pb) == 0:
-            continue
-        pr = (pb[:, :2] - c) @ Vt.T
-        hs.append(hb.height)
-        ee = pr.max(0) - pr.min(0)
-        e0.append(ee[0])
-        e1.append(ee[1])
-    m.sigma = {"height": float(np.std(hs) + voxel / np.sqrt(12)) if hs else voxel,
-               "extent_major": float(np.std(e0) + voxel / np.sqrt(12)) if e0 else voxel,
-               "extent_minor": float(np.std(e1) + voxel / np.sqrt(12)) if e1 else voxel}
+        gsub = {k: g for k, g in grads.items() if k in sub}
+        zb, _ = top_height_sweep(images, views, hull0, gsub)
+        hs.append(zb)
+        _, ob = refine_outline(P2, N2, zb, views, gsub)
+        if len(ob) > 30:
+            ee = hull_ext + 2 * float(np.clip(np.median(ob), -1.5, 0.3))
+            e0.append(ee[0])
+            e1.append(ee[1])
+    floor = 0.05
+    # model term: a large hull-vs-sweep gap means the top may be a small raised feature (see sweep docstring)
+    gap_term = 0.25 * max(0.0, hull0.height - z_top)
+    m.sigma = {"height": float(np.hypot(np.std(hs) if len(hs) > 2 else voxel, gap_term) + floor),
+               "extent_major": float(np.std(e0) + floor) if len(e0) > 2 else voxel,
+               "extent_minor": float(np.std(e1) + floor) if len(e1) > 2 else voxel}
     return m, hull, masks

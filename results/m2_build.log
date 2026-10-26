@@ -1,2 +1,42 @@
-/Users/eshaan.kapooswalla/.local/share/mise/installs/python/3.12.14/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown
-  warnings.warn('resource_tracker: There appear to be %d '
+{
+ "seed": 0,
+ "families": {
+  "spacer": "train",
+  "knob_dshaft": "train",
+  "cap_round": "train",
+  "wheel_grooved": "train",
+  "battery_cover": "train",
+  "l_bracket": "train",
+  "cable_clip": "train",
+  "shelf_peg": "train",
+  "hook": "val",
+  "hinge_leaf": "test",
+  "rack_clip": "test",
+  "end_cap_rect": "test"
+ },
+ "train": {
+  "generated": 50000,
+  "checked": 50000,
+  "exec_fail": 11,
+  "kept": 49989
+ },
+ "test_id": {
+  "generated": 200,
+  "checked": 200,
+  "exec_fail": 0,
+  "kept": 200
+ },
+ "val": {
+  "generated": 100,
+  "checked": 100,
+  "exec_fail": 0,
+  "kept": 100
+ },
+ "test": {
+  "generated": 180,
+  "checked": 180,
+  "exec_fail": 0,
+  "kept": 180
+ },
+ "exec_seconds": 575.4
+}

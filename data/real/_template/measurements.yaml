@@ -1,0 +1,13 @@
+# Copy to data/real/<part_id>/measurements.yaml. Units: mm. Leave unknown values as null.
+part_id: p000
+part_type_hint: null        # e.g. "knob", "cable clip", "spacer", "battery cover", "shelf peg", "hinge"
+description: ""             # free text; also used by the safety check
+material_original: null      # if known (ABS, PP, POM ...)
+intact_original: true        # false if only a broken piece is available
+mating_available: true
+caliper:                     # each entry: name, value, on (part|mating), repeat readings optional
+  - {name: overall_height, value: null, on: part}
+  - {name: hole_diameter, value: null, on: part}
+  - {name: shaft_diameter, value: null, on: mating}
+  - {name: shaft_flat, value: null, on: mating}
+consent_photos_release: false  # true only if you agree that derived (not raw) photos may be released

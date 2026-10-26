@@ -179,3 +179,15 @@ def virtual_printer_for(uid: str) -> PrinterProfile:
 
 
 _ = np
+
+
+def task_from_record(rec: dict, printer: PrinterProfile | None = None) -> Task:
+    inst = PartInstance(rec["family"], rec["uid"], rec["split"], rec["mating"], rec["original"], rec["design"],
+                        int(rec.get("style", 0)), rec.get("material", "PLA"))
+    return Task(inst, printer or DEFAULT_PRINTER, rec.get("material", "PLA"))
+
+
+def printer_by_name(name: str | None) -> PrinterProfile:
+    if not name or name == DEFAULT_PRINTER.name:
+        return DEFAULT_PRINTER
+    return VIRTUAL_PRINTERS[name]

@@ -1,0 +1,2861 @@
+{
+ "provenance": {
+  "git_commit": "7a7a8414b382a698208582511fdf68354d3030aa-dirty",
+  "data_snapshot": "bd2ee517e9873eba",
+  "checkpoint": "none",
+  "seed": 0,
+  "config": {
+   "n": 90,
+   "seed": 0,
+   "views": 8,
+   "workers": null,
+   "out": "results/m1/metrology_synth.json"
+  },
+  "evidence_stage": "simulated",
+  "printer": null,
+  "material": null,
+  "timestamp": "2026-10-26T18:01:14",
+  "host": "macOS-27.0.1-arm64-arm-64bit"
+ },
+ "n_parts": 90,
+ "n_calib": 30,
+ "n_eval": 60,
+ "seconds": 47.0,
+ "summary_all_raw": {
+  "boss_d": {
+   "n": 3,
+   "detected": 3,
+   "detection_rate": 1.0,
+   "abs_err_median": 5.229697525831924,
+   "abs_err_median_ci95": [
+    3.125292923212413,
+    7.021577037582112
+   ],
+   "abs_err_p90": 6.663201135232074,
+   "coverage_1sigma": 0.0,
+   "coverage_2sigma": 0.0,
+   "n_with_sigma": 3
+  },
+  "extent": {
+   "n": 180,
+   "detected": 180,
+   "detection_rate": 1.0,
+   "abs_err_median": 0.6019342472216636,
+   "abs_err_median_ci95": [
+    0.5040948281416213,
+    0.6608735006760927
+   ],
+   "abs_err_p90": 1.7212324229707898,
+   "coverage_1sigma": 0.10227272727272728,
+   "coverage_2sigma": 0.2159090909090909,
+   "n_with_sigma": 176
+  },
+  "height": {
+   "n": 90,
+   "detected": 90,
+   "detection_rate": 1.0,
+   "abs_err_median": 1.4891134364842706,
+   "abs_err_median_ci95": [
+    0.6906293066057883,
+    3.457128818757514
+   ],
+   "abs_err_p90": 9.991019970052685,
+   "coverage_1sigma": 0.5681818181818182,
+   "coverage_2sigma": 0.7954545454545454,
+   "n_with_sigma": 88
+  },
+  "hole_d": {
+   "n": 8,
+   "detected": 7,
+   "detection_rate": 0.875,
+   "abs_err_median": 1.2346269940858905,
+   "abs_err_median_ci95": [
+    0.7955980962687557,
+    3.2995365325784265
+   ],
+   "abs_err_p90": 3.3825438539766606,
+   "coverage_1sigma": 0.0,
+   "coverage_2sigma": 0.0,
+   "n_with_sigma": 7
+  }
+ },
+ "summary_eval_raw": {
+  "extent": {
+   "n": 120,
+   "detected": 120,
+   "detection_rate": 1.0,
+   "abs_err_median": 0.558087672944513,
+   "abs_err_median_ci95": [
+    0.480201950930211,
+    0.6420055028406395
+   ],
+   "abs_err_p90": 1.6282081479200148,
+   "coverage_1sigma": 0.1016949152542373,
+   "coverage_2sigma": 0.2288135593220339,
+   "n_with_sigma": 118
+  },
+  "height": {
+   "n": 60,
+   "detected": 60,
+   "detection_rate": 1.0,
+   "abs_err_median": 1.94119802443773,
+   "abs_err_median_ci95": [
+    0.681738099094409,
+    3.890911529258471
+   ],
+   "abs_err_p90": 8.248065200843298,
+   "coverage_1sigma": 0.559322033898305,
+   "coverage_2sigma": 0.8813559322033898,
+   "n_with_sigma": 59
+  }
+ },
+ "sigma_scales_from_calib": {
+  "extent": 8.128741755337556,
+  "height": 2.4724467197540894,
+  "hole_d": 13.528122181559436
+ },
+ "summary_eval_calibrated": {
+  "extent": {
+   "n": 120,
+   "detected": 120,
+   "detection_rate": 1.0,
+   "abs_err_median": 0.558087672944513,
+   "abs_err_median_ci95": [
+    0.480201950930211,
+    0.6420055028406395
+   ],
+   "abs_err_p90": 1.6282081479200148,
+   "coverage_1sigma": 0.7288135593220338,
+   "coverage_2sigma": 0.9491525423728814,
+   "n_with_sigma": 118
+  },
+  "height": {
+   "n": 60,
+   "detected": 60,
+   "detection_rate": 1.0,
+   "abs_err_median": 1.94119802443773,
+   "abs_err_median_ci95": [
+    0.681738099094409,
+    3.890911529258471
+   ],
+   "abs_err_p90": 8.248065200843298,
+   "coverage_1sigma": 0.9152542372881356,
+   "coverage_2sigma": 1.0,
+   "n_with_sigma": 59
+  }
+ },
+ "by_family_height_abs_err_median": {
+  "battery_cover": 13.052222855098561,
+  "cable_clip": 0.2942488257466529,
+  "cap_round": 1.8191636846039039,
+  "end_cap_rect": 8.123844018676984,
+  "hinge_leaf": 4.371833874965551,
+  "hook": 0.6819198535836097,
+  "knob_dshaft": 0.9315653084417939,
+  "l_bracket": 1.4197790850974856,
+  "rack_clip": 0.32575732826736514,
+  "shelf_peg": 8.539972276198272,
+  "spacer": 0.1765957791419126,
+  "wheel_grooved": 0.11005633650572477
+ },
+ "parts": [
+  {
+   "uid": "l_bracket_tid010",
+   "family": "l_bracket",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 21.52,
+     "meas": 25.225973621586736,
+     "sigma": 0.5861255086302615
+    },
+    {
+     "feature": "extent",
+     "true": 67.1210230913269,
+     "meas": 68.31503439506328,
+     "sigma": 0.16806147360188
+    },
+    {
+     "feature": "extent",
+     "true": 37.10559402208614,
+     "meas": 37.28810107895003,
+     "sigma": 0.16806147360187954
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3143828906838407,
+   "n_circles": 1,
+   "seconds": 12.966424942016602,
+   "role": "calib"
+  },
+  {
+   "uid": "l_bracket_tid021",
+   "family": "l_bracket",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 16.24,
+     "meas": 15.666139313452472,
+     "sigma": 0.9405873713830321
+    },
+    {
+     "feature": "extent",
+     "true": 38.28025268184666,
+     "meas": 38.26174463173953,
+     "sigma": 0.14945257655848038
+    },
+    {
+     "feature": "extent",
+     "true": 22.09333774271987,
+     "meas": 21.89379470807634,
+     "sigma": 0.1494525765584801
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.29797035917899856,
+   "n_circles": 1,
+   "seconds": 10.049985647201538,
+   "role": "calib"
+  },
+  {
+   "uid": "battery_cover_tid018",
+   "family": "battery_cover",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 14.14,
+     "meas": 1.4836043319008283,
+     "sigma": 4.479169115256786
+    },
+    {
+     "feature": "extent",
+     "true": 51.96163376977566,
+     "meas": 51.309978328502304,
+     "sigma": 0.07488546374186658
+    },
+    {
+     "feature": "extent",
+     "true": 47.16727167135413,
+     "meas": 47.70920469382858,
+     "sigma": 0.07488546374186658
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2979589579107458,
+   "n_circles": 1,
+   "seconds": 11.65552020072937,
+   "role": "calib"
+  },
+  {
+   "uid": "shelf_peg_tid021",
+   "family": "shelf_peg",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 9.83,
+     "meas": 3.661917697081357,
+     "sigma": 2.510561620761124
+    },
+    {
+     "feature": "extent",
+     "true": 23.783092300277502,
+     "meas": 24.642180892405637,
+     "sigma": 0.08548256630573145
+    },
+    {
+     "feature": "extent",
+     "true": 8.890937768697427,
+     "meas": 9.589703628640022,
+     "sigma": 0.08548256630573164
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.31268101496532147,
+   "n_circles": 0,
+   "seconds": 8.728787183761597,
+   "role": "calib"
+  },
+  {
+   "uid": "cable_clip_tid002",
+   "family": "cable_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.42,
+     "meas": 12.751013275206091,
+     "sigma": 1.3817938378086534
+    },
+    {
+     "feature": "extent",
+     "true": 23.79166645271158,
+     "meas": 23.86343845880225,
+     "sigma": 0.2680331621455604
+    },
+    {
+     "feature": "extent",
+     "true": 13.740785966568858,
+     "meas": 13.759694201919151,
+     "sigma": 0.268033162145559
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.30993613880255383,
+   "n_circles": 1,
+   "seconds": 9.445198059082031,
+   "role": "calib"
+  },
+  {
+   "uid": "cap_round_tid003",
+   "family": "cap_round",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 23.66,
+     "meas": 26.868284015928293,
+     "sigma": 1.9119056635069163
+    },
+    {
+     "feature": "extent",
+     "true": 22.96056661444905,
+     "meas": 27.27441903415679,
+     "sigma": 0.17697586087755063
+    },
+    {
+     "feature": "extent",
+     "true": 22.961521730498315,
+     "meas": 25.891287185492256,
+     "sigma": 0.17697586087755063
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.30138587790793325,
+   "n_circles": 1,
+   "seconds": 10.022122144699097,
+   "role": "calib"
+  },
+  {
+   "uid": "shelf_peg_tid004",
+   "family": "shelf_peg",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 11.84,
+     "meas": 2.3854423296647584,
+     "sigma": 3.436016370330863
+    },
+    {
+     "feature": "extent",
+     "true": 21.013626325414847,
+     "meas": 21.88603072621251,
+     "sigma": 0.13438591433052424
+    },
+    {
+     "feature": "extent",
+     "true": 9.63962076919043,
+     "meas": 10.25736585823921,
+     "sigma": 0.13438591433052416
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.27986406357197857,
+   "n_circles": 0,
+   "seconds": 8.9480140209198,
+   "role": "calib"
+  },
+  {
+   "uid": "wheel_grooved_tid017",
+   "family": "wheel_grooved",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 13.4,
+     "meas": 13.308376408720557,
+     "sigma": 1.6867032350187903
+    },
+    {
+     "feature": "extent",
+     "true": 18.842912373151293,
+     "meas": 19.838933502054754,
+     "sigma": 0.08489752208044452
+    },
+    {
+     "feature": "extent",
+     "true": 18.84242047104034,
+     "meas": 20.011129019476986,
+     "sigma": 0.08489752208044452
+    },
+    {
+     "feature": "boss_d",
+     "true": 14.510000000000002,
+     "meas": 19.739697525831925,
+     "sigma": 0.15748080626547056,
+     "name": "groove_root_d",
+     "critical": true
+    },
+    {
+     "feature": "hole_d",
+     "true": 5.17,
+     "meas": 2.2759697796772205,
+     "sigma": 0.16466243024069716,
+     "name": "bore_diameter",
+     "critical": true
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3260227433021226,
+   "n_circles": 4,
+   "seconds": 9.33884882926941,
+   "role": "calib"
+  },
+  {
+   "uid": "cable_clip_tid016",
+   "family": "cable_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 13.71,
+     "meas": 14.416608939195998,
+     "sigma": 2.1001332646288806
+    },
+    {
+     "feature": "extent",
+     "true": 24.30104872527582,
+     "meas": 25.00660709391616,
+     "sigma": 0.18005830594162558
+    },
+    {
+     "feature": "extent",
+     "true": 15.55197143307986,
+     "meas": 15.700246946167612,
+     "sigma": 0.1800583059416258
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3117482042767607,
+   "n_circles": 3,
+   "seconds": 9.656994819641113,
+   "role": "calib"
+  },
+  {
+   "uid": "wheel_grooved_tid001",
+   "family": "wheel_grooved",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 9.23,
+     "meas": 9.119943663494276,
+     "sigma": 3.77023813200555
+    },
+    {
+     "feature": "extent",
+     "true": 28.46677167360089,
+     "meas": 29.171638046021883,
+     "sigma": 0.06482161928979836
+    },
+    {
+     "feature": "extent",
+     "true": 28.470368410167183,
+     "meas": 29.36340648781014,
+     "sigma": 0.06482161928979836
+    },
+    {
+     "feature": "boss_d",
+     "true": 21.54,
+     "meas": 28.56157703758211,
+     "sigma": 0.1435398353576889,
+     "name": "groove_root_d",
+     "critical": true
+    },
+    {
+     "feature": "hole_d",
+     "true": 6.16,
+     "meas": 4.92537300591411,
+     "sigma": 0.1075223572976791,
+     "name": "bore_diameter",
+     "critical": true
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.27746609230178304,
+   "n_circles": 3,
+   "seconds": 10.092212915420532,
+   "role": "calib"
+  },
+  {
+   "uid": "l_bracket_tid004",
+   "family": "l_bracket",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 22.58,
+     "meas": 24.56470738312869,
+     "sigma": 0.2940946859907057
+    },
+    {
+     "feature": "extent",
+     "true": 54.517385617033355,
+     "meas": 54.018505431007185,
+     "sigma": 0.19208428475252298
+    },
+    {
+     "feature": "extent",
+     "true": 30.251075283142864,
+     "meas": 30.384873147136258,
+     "sigma": 0.1920842847525232
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.29437966223606316,
+   "n_circles": 5,
+   "seconds": 11.946318864822388,
+   "role": "calib"
+  },
+  {
+   "uid": "knob_dshaft_tid021",
+   "family": "knob_dshaft",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 13.22,
+     "meas": 12.207466782179837,
+     "sigma": 3.2989937321336016
+    },
+    {
+     "feature": "extent",
+     "true": 35.71972580683341,
+     "meas": 37.82085458695089,
+     "sigma": 0.07620820693426944
+    },
+    {
+     "feature": "extent",
+     "true": 35.71450556217965,
+     "meas": 36.57915323217833,
+     "sigma": 0.07620820693426944
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3891531381476643,
+   "n_circles": 6,
+   "seconds": 12.573292016983032,
+   "role": "calib"
+  },
+  {
+   "uid": "shelf_peg_tid002",
+   "family": "shelf_peg",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.42,
+     "meas": 4.747174883964822,
+     "sigma": 2.706424280900183
+    },
+    {
+     "feature": "extent",
+     "true": 17.954414046828518,
+     "meas": 18.423326262249002,
+     "sigma": 0.1402053264162128
+    },
+    {
+     "feature": "extent",
+     "true": 13.255255183196851,
+     "meas": 13.807898128262217,
+     "sigma": 0.1402053264162127
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.28903544716319335,
+   "n_circles": 4,
+   "seconds": 9.207704067230225,
+   "role": "calib"
+  },
+  {
+   "uid": "spacer_tid002",
+   "family": "spacer",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 19.83,
+     "meas": 19.454162899829964,
+     "sigma": 2.3264146111592585
+    },
+    {
+     "feature": "extent",
+     "true": 15.083543811402592,
+     "meas": 16.810224778954368,
+     "sigma": 0.11562173906023859
+    },
+    {
+     "feature": "extent",
+     "true": 15.084610004578707,
+     "meas": 15.987067932049042,
+     "sigma": 0.11562173906023852
+    },
+    {
+     "feature": "hole_d",
+     "true": 8.24,
+     "meas": 4.732945163925989,
+     "sigma": 0.2677689362296264,
+     "name": "bore_diameter",
+     "critical": true
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.29459357203058734,
+   "n_circles": 4,
+   "seconds": 9.416311979293823,
+   "role": "calib"
+  },
+  {
+   "uid": "cable_clip_tid006",
+   "family": "cable_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 9.81,
+     "meas": 10.067484376287215,
+     "sigma": 1.143124926371979
+    },
+    {
+     "feature": "extent",
+     "true": 18.433372963013426,
+     "meas": 18.838785053542807,
+     "sigma": 0.09986933064939263
+    },
+    {
+     "feature": "extent",
+     "true": 10.053198047302558,
+     "meas": 9.673133379699964,
+     "sigma": 0.09986933064939238
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2967560409626525,
+   "n_circles": 1,
+   "seconds": 9.130280017852783,
+   "role": "calib"
+  },
+  {
+   "uid": "battery_cover_tid002",
+   "family": "battery_cover",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.74,
+     "meas": 1.9587446734579184,
+     "sigma": 5.3353361014205385
+    },
+    {
+     "feature": "extent",
+     "true": 34.52004380554452,
+     "meas": 35.19001404010093,
+     "sigma": 0.09998484522237663
+    },
+    {
+     "feature": "extent",
+     "true": 34.57915016939262,
+     "meas": 34.55280575761963,
+     "sigma": 0.09998484522237663
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.28530417476692393,
+   "n_circles": 1,
+   "seconds": 10.830252170562744,
+   "role": "calib"
+  },
+  {
+   "uid": "spacer_tid006",
+   "family": "spacer",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 18.81,
+     "meas": 18.566981187646412,
+     "sigma": 1.2850924628771367
+    },
+    {
+     "feature": "extent",
+     "true": 11.645773653903731,
+     "meas": 12.721575111298957,
+     "sigma": 0.13217105881372193
+    },
+    {
+     "feature": "extent",
+     "true": 11.645114201299435,
+     "meas": 12.538951030701487,
+     "sigma": 0.13217105881372193
+    },
+    {
+     "feature": "hole_d",
+     "true": 4.31,
+     "meas": 3.5023393769504945,
+     "sigma": 0.18214058542980566,
+     "name": "bore_diameter",
+     "critical": true
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3064567392093705,
+   "n_circles": 2,
+   "seconds": 5.1907958984375,
+   "role": "calib"
+  },
+  {
+   "uid": "battery_cover_tid005",
+   "family": "battery_cover",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 16.08,
+     "meas": 1.6873557923179203,
+     "sigma": 5.553269698340469
+    },
+    {
+     "feature": "extent",
+     "true": 62.69482936860277,
+     "meas": 62.369092607670666,
+     "sigma": 0.08856354570796401
+    },
+    {
+     "feature": "extent",
+     "true": 40.782013012246246,
+     "meas": 41.456836267699515,
+     "sigma": 0.08856354570796401
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3351390156678452,
+   "n_circles": 1,
+   "seconds": 9.39900803565979,
+   "role": "calib"
+  },
+  {
+   "uid": "shelf_peg_tid024",
+   "family": "shelf_peg",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.87,
+     "meas": 3.462880563638632,
+     "sigma": 3.46030520522547
+    },
+    {
+     "feature": "extent",
+     "true": 27.848537442032068,
+     "meas": 28.41144593430685,
+     "sigma": 0.0990901594486354
+    },
+    {
+     "feature": "extent",
+     "true": 13.949825898657238,
+     "meas": 14.534577202903197,
+     "sigma": 0.09909015944863486
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2907993281888067,
+   "n_circles": 0,
+   "seconds": 9.075210809707642,
+   "role": "calib"
+  },
+  {
+   "uid": "cap_round_tid002",
+   "family": "cap_round",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 15.66,
+     "meas": 15.229956646720485,
+     "sigma": 2.0948345036258242
+    },
+    {
+     "feature": "extent",
+     "true": 19.41172137956589,
+     "meas": 20.36852224580344,
+     "sigma": 0.12889532284941868
+    },
+    {
+     "feature": "extent",
+     "true": 19.413044236039383,
+     "meas": 19.85555855202363,
+     "sigma": 0.12889532284941868
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2932566956162141,
+   "n_circles": 1,
+   "seconds": 5.655774831771851,
+   "role": "calib"
+  },
+  {
+   "uid": "knob_dshaft_tid006",
+   "family": "knob_dshaft",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 14.21,
+     "meas": 13.359402600936576,
+     "sigma": 2.8607252364203544
+    },
+    {
+     "feature": "extent",
+     "true": 33.099264952533375,
+     "meas": 35.72474189409808,
+     "sigma": 0.08594641210455503
+    },
+    {
+     "feature": "extent",
+     "true": 33.09325061479439,
+     "meas": 33.727502109382115,
+     "sigma": 0.08594641210455504
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2952215373464815,
+   "n_circles": 4,
+   "seconds": 6.743680000305176,
+   "role": "calib"
+  },
+  {
+   "uid": "battery_cover_tid017",
+   "family": "battery_cover",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 14.98,
+     "meas": 1.864085964453914,
+     "sigma": 4.384100934633761
+    },
+    {
+     "feature": "extent",
+     "true": 45.91727361920894,
+     "meas": 46.22535359764913,
+     "sigma": 0.13716375602232314
+    },
+    {
+     "feature": "extent",
+     "true": 28.13758936102038,
+     "meas": 28.72951927188256,
+     "sigma": 0.13716375602232284
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.268977040010898,
+   "n_circles": 0,
+   "seconds": 6.896238088607788,
+   "role": "calib"
+  },
+  {
+   "uid": "spacer_tid013",
+   "family": "spacer",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 13.0,
+     "meas": 13.069054322187359,
+     "sigma": 1.058418740779176
+    },
+    {
+     "feature": "extent",
+     "true": 10.606700920671017,
+     "meas": 12.314178981463707,
+     "sigma": 0.07724481723242119
+    },
+    {
+     "feature": "extent",
+     "true": 10.603535106683012,
+     "meas": 10.849845685426272,
+     "sigma": 0.07724481723242119
+    },
+    {
+     "feature": "hole_d",
+     "true": 2.63,
+     "meas": null,
+     "sigma": null,
+     "name": "bore_diameter",
+     "missed": true
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.29250049348278584,
+   "n_circles": 1,
+   "seconds": 13.37087082862854,
+   "role": "calib"
+  },
+  {
+   "uid": "battery_cover_tid009",
+   "family": "battery_cover",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 14.89,
+     "meas": 1.9014683253489655,
+     "sigma": 4.825495379230413
+    },
+    {
+     "feature": "extent",
+     "true": 38.54369977170383,
+     "meas": 39.26786592501827,
+     "sigma": 0.07051050525547423
+    },
+    {
+     "feature": "extent",
+     "true": 34.93892276523952,
+     "meas": 34.21459867041494,
+     "sigma": 0.07051050525547423
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.28347046306640955,
+   "n_circles": 1,
+   "seconds": 6.976280212402344,
+   "role": "calib"
+  },
+  {
+   "uid": "battery_cover_tid011",
+   "family": "battery_cover",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 13.49,
+     "meas": 0,
+     "sigma": null
+    },
+    {
+     "feature": "extent",
+     "true": 64.61971922931033,
+     "meas": 0,
+     "sigma": null
+    },
+    {
+     "feature": "extent",
+     "true": 67.62441915303003,
+     "meas": 0,
+     "sigma": null
+    }
+   ],
+   "n_views_used": 0,
+   "calib_rms_px": 0.30422209743885603,
+   "n_circles": 0,
+   "seconds": 6.10425591468811,
+   "role": "calib"
+  },
+  {
+   "uid": "l_bracket_tid020",
+   "family": "l_bracket",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.63,
+     "meas": 11.775149212933723,
+     "sigma": 2.040948666968982
+    },
+    {
+     "feature": "extent",
+     "true": 60.14954837485548,
+     "meas": 59.92319994476071,
+     "sigma": 0.21684308851779754
+    },
+    {
+     "feature": "extent",
+     "true": 32.78519008539237,
+     "meas": 33.66045229959502,
+     "sigma": 0.21684308851779754
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.29854758202702486,
+   "n_circles": 0,
+   "seconds": 7.619487047195435,
+   "role": "calib"
+  },
+  {
+   "uid": "spacer_tid000",
+   "family": "spacer",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.17,
+     "meas": 8.195756367800486,
+     "sigma": 1.451176429943343
+    },
+    {
+     "feature": "extent",
+     "true": 10.945733451363523,
+     "meas": 11.516697291505471,
+     "sigma": 0.053521866078514155
+    },
+    {
+     "feature": "extent",
+     "true": 10.945758278164448,
+     "meas": 11.242133052747091,
+     "sigma": 0.053521866078514155
+    },
+    {
+     "feature": "hole_d",
+     "true": 2.84,
+     "meas": 2.044401903731244,
+     "sigma": 0.2745053557673058,
+     "name": "bore_diameter",
+     "critical": true
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2953472577690769,
+   "n_circles": 2,
+   "seconds": 4.6309239864349365,
+   "role": "calib"
+  },
+  {
+   "uid": "wheel_grooved_tid013",
+   "family": "wheel_grooved",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 13.25,
+     "meas": 13.026984886803234,
+     "sigma": 6.00341681082351
+    },
+    {
+     "feature": "extent",
+     "true": 39.31768359156557,
+     "meas": 41.906716150220156,
+     "sigma": 0.23761084221130302
+    },
+    {
+     "feature": "extent",
+     "true": 39.30758271218876,
+     "meas": 41.02820974131722,
+     "sigma": 0.23761084221130302
+    },
+    {
+     "feature": "boss_d",
+     "true": 37.51,
+     "meas": 40.63529292321241,
+     "sigma": 0.2001564874453425,
+     "name": "groove_root_d",
+     "critical": true
+    },
+    {
+     "feature": "hole_d",
+     "true": 5.21,
+     "meas": 1.9104634674215737,
+     "sigma": 0.15998004763743667,
+     "name": "bore_diameter",
+     "critical": true
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.27959345878658515,
+   "n_circles": 4,
+   "seconds": 7.149670839309692,
+   "role": "calib"
+  },
+  {
+   "uid": "spacer_tid007",
+   "family": "spacer",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 16.72,
+     "meas": 16.543404220858086,
+     "sigma": 1.3636494534766415
+    },
+    {
+     "feature": "extent",
+     "true": 13.269133166819572,
+     "meas": 13.5676214726316,
+     "sigma": 0.15433485533902813
+    },
+    {
+     "feature": "extent",
+     "true": 13.386802475533358,
+     "meas": 13.142074686964083,
+     "sigma": 0.15433485533902813
+    },
+    {
+     "feature": "hole_d",
+     "true": 8.18,
+     "meas": 7.684036091428777,
+     "sigma": 0.1545358137267104,
+     "name": "bore_diameter",
+     "critical": true
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.36627631873211564,
+   "n_circles": 2,
+   "seconds": 5.235713005065918,
+   "role": "calib"
+  },
+  {
+   "uid": "cable_clip_tid018",
+   "family": "cable_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.22,
+     "meas": 8.159269382909029,
+     "sigma": 1.0562487445680986
+    },
+    {
+     "feature": "extent",
+     "true": 22.15049730891588,
+     "meas": 22.790730990489894,
+     "sigma": 0.07988002435822014
+    },
+    {
+     "feature": "extent",
+     "true": 9.441775200581802,
+     "meas": 9.050547225107834,
+     "sigma": 0.07988002435821989
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2869976009847212,
+   "n_circles": 0,
+   "seconds": 5.034787893295288,
+   "role": "calib"
+  },
+  {
+   "uid": "rack_clip_te000",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 7.43,
+     "meas": 7.473363299635782,
+     "sigma": 1.8574835330234114
+    },
+    {
+     "feature": "extent",
+     "true": 21.649850158784787,
+     "meas": 21.16805463028244,
+     "sigma": 0.06527907106186234
+    },
+    {
+     "feature": "extent",
+     "true": 17.64454802132387,
+     "meas": 17.209787386705568,
+     "sigma": 0.06527907106186234
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2812650593137699,
+   "n_circles": 1,
+   "seconds": 5.053402900695801,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va078",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 14.33,
+     "meas": 15.084788803721858,
+     "sigma": 3.442074467613552
+    },
+    {
+     "feature": "extent",
+     "true": 40.812546607053335,
+     "meas": 41.85037790531045,
+     "sigma": 0.18268802505812892
+    },
+    {
+     "feature": "extent",
+     "true": 25.92453083914299,
+     "meas": 25.652833099575506,
+     "sigma": 0.1826880250581298
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.278709180999772,
+   "n_circles": 0,
+   "seconds": 8.731183767318726,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te021",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.176157432531012,
+     "meas": 3.8507519933066643,
+     "sigma": 2.763449017493077
+    },
+    {
+     "feature": "extent",
+     "true": 32.74804777159673,
+     "meas": 33.58544820598671,
+     "sigma": 0.08867959528778015
+    },
+    {
+     "feature": "extent",
+     "true": 22.834944599774147,
+     "meas": 23.243639855354775,
+     "sigma": 0.08867959528777877
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.30277355201412726,
+   "n_circles": 2,
+   "seconds": 7.689877033233643,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te054",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 9.3,
+     "meas": 15.57881750813471,
+     "sigma": 18.552183975446344
+    },
+    {
+     "feature": "extent",
+     "true": 15.370189081975397,
+     "meas": 15.860261790329238,
+     "sigma": 0.24415910870227264
+    },
+    {
+     "feature": "extent",
+     "true": 14.095158523294543,
+     "meas": 14.449453445697056,
+     "sigma": 0.24415910870227264
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.28538168878363906,
+   "n_circles": 1,
+   "seconds": 14.909970045089722,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te030",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 11.85,
+     "meas": 11.95540769218632,
+     "sigma": 1.4273322519523568
+    },
+    {
+     "feature": "extent",
+     "true": 22.036955113452805,
+     "meas": 21.042721425099142,
+     "sigma": 0.1022274185910908
+    },
+    {
+     "feature": "extent",
+     "true": 18.03824910752758,
+     "meas": 17.605229629812513,
+     "sigma": 0.1022274185910908
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2962267922492833,
+   "n_circles": 2,
+   "seconds": 5.063710927963257,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te025",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 6.378319937925559,
+     "meas": 2.5065545174312147,
+     "sigma": 4.448502173935046
+    },
+    {
+     "feature": "extent",
+     "true": 32.732233698599046,
+     "meas": 33.80491203946401,
+     "sigma": 0.11814605684781539
+    },
+    {
+     "feature": "extent",
+     "true": 29.482303177815083,
+     "meas": 30.09476332906141,
+     "sigma": 0.11814605684781593
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2785041828100637,
+   "n_circles": 1,
+   "seconds": 7.008117914199829,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va017",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 16.22,
+     "meas": 16.62200800737694,
+     "sigma": 1.569492121926114
+    },
+    {
+     "feature": "extent",
+     "true": 46.71716011567122,
+     "meas": 46.41678208368407,
+     "sigma": 0.1358987564419566
+    },
+    {
+     "feature": "extent",
+     "true": 25.855245746740394,
+     "meas": 25.057850502544657,
+     "sigma": 0.13589875644195604
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2751324057534796,
+   "n_circles": 1,
+   "seconds": 7.136170148849487,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te037",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 10.79,
+     "meas": 10.323365248416218,
+     "sigma": 1.6034897329750168
+    },
+    {
+     "feature": "extent",
+     "true": 20.296490358778396,
+     "meas": 19.874946131922556,
+     "sigma": 0.2025897346274183
+    },
+    {
+     "feature": "extent",
+     "true": 16.059630639591006,
+     "meas": 15.752222115434009,
+     "sigma": 0.2025897346274177
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3135769785626768,
+   "n_circles": 1,
+   "seconds": 8.817484855651855,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va072",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 11.18,
+     "meas": 11.769659749178235,
+     "sigma": 2.1416592881038015
+    },
+    {
+     "feature": "extent",
+     "true": 42.19017186566376,
+     "meas": 41.651904682240215,
+     "sigma": 0.14219673181366044
+    },
+    {
+     "feature": "extent",
+     "true": 26.496300137403892,
+     "meas": 25.943307163109914,
+     "sigma": 0.14219673181365938
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2948376727959802,
+   "n_circles": 2,
+   "seconds": 8.10487699508667,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te039",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.66,
+     "meas": 3.293944159659886,
+     "sigma": 5.452164470938052
+    },
+    {
+     "feature": "extent",
+     "true": 37.49026050774817,
+     "meas": 38.67755031877107,
+     "sigma": 0.12567932854863656
+    },
+    {
+     "feature": "extent",
+     "true": 32.564773369933036,
+     "meas": 33.20002079885743,
+     "sigma": 0.12567932854863656
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3095791888983885,
+   "n_circles": 1,
+   "seconds": 7.254657030105591,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te002",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 10.71,
+     "meas": 11.769216316378891,
+     "sigma": 1.234838330734659
+    },
+    {
+     "feature": "extent",
+     "true": 20.162315548911803,
+     "meas": 20.94317492648472,
+     "sigma": 0.22775213200927097
+    },
+    {
+     "feature": "extent",
+     "true": 15.591651822826933,
+     "meas": 15.334985997136815,
+     "sigma": 0.2277521320092713
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.27546789913876635,
+   "n_circles": 3,
+   "seconds": 5.3439249992370605,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va021",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 19.76,
+     "meas": 22.47647684715433,
+     "sigma": 0.8741369571888575
+    },
+    {
+     "feature": "extent",
+     "true": 38.477997902660604,
+     "meas": 38.90824849283089,
+     "sigma": 0.22612798948683105
+    },
+    {
+     "feature": "extent",
+     "true": 26.353808359384026,
+     "meas": 27.3293543547097,
+     "sigma": 0.226127989486829
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.39140845392790546,
+   "n_circles": 1,
+   "seconds": 6.944310665130615,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te047",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.42,
+     "meas": 8.439275027407957,
+     "sigma": 1.5404013305358515
+    },
+    {
+     "feature": "extent",
+     "true": 22.536610787864912,
+     "meas": 22.0930486599992,
+     "sigma": 0.057614805144404674
+    },
+    {
+     "feature": "extent",
+     "true": 17.109984531764496,
+     "meas": 16.790142437898897,
+     "sigma": 0.057614805144404674
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.29351081052836514,
+   "n_circles": 0,
+   "seconds": 5.11687707901001,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te003",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 11.600000000000001,
+     "meas": 5.528659781677308,
+     "sigma": 3.806300897742713
+    },
+    {
+     "feature": "extent",
+     "true": 23.217915024739025,
+     "meas": 23.69195680260627,
+     "sigma": 0.1014389388985562
+    },
+    {
+     "feature": "extent",
+     "true": 22.52890010046127,
+     "meas": 22.91637228840763,
+     "sigma": 0.1014389388985562
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3050182453479188,
+   "n_circles": 1,
+   "seconds": 8.350393056869507,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te057",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 9.61,
+     "meas": 9.484549317407874,
+     "sigma": 1.6859886737502403
+    },
+    {
+     "feature": "extent",
+     "true": 21.79392274155674,
+     "meas": 21.31670360319163,
+     "sigma": 0.12818306241295746
+    },
+    {
+     "feature": "extent",
+     "true": 17.84938131046657,
+     "meas": 17.20737580762593,
+     "sigma": 0.12818306241295807
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.28512838311156186,
+   "n_circles": 1,
+   "seconds": 5.0494489669799805,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te031",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 6.03910928920336,
+     "meas": 2.976672174576354,
+     "sigma": 4.181036922360292
+    },
+    {
+     "feature": "extent",
+     "true": 30.704797040317757,
+     "meas": 31.222928278519774,
+     "sigma": 0.06953928255046644
+    },
+    {
+     "feature": "extent",
+     "true": 21.085173449264992,
+     "meas": 21.196942987428894,
+     "sigma": 0.06953928255046644
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2993559771310079,
+   "n_circles": 2,
+   "seconds": 6.3683180809021,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va082",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 14.07,
+     "meas": 23.973216041553854,
+     "sigma": 2.4795430465760484
+    },
+    {
+     "feature": "extent",
+     "true": 63.05049779353034,
+     "meas": 65.67801188712001,
+     "sigma": 0.29186574841988966
+    },
+    {
+     "feature": "extent",
+     "true": 32.17088380943275,
+     "meas": 32.298318225880344,
+     "sigma": 0.29186574841989094
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2903219124821139,
+   "n_circles": 0,
+   "seconds": 7.808670997619629,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te038",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.419111931144945,
+     "meas": 2.7209327546617215,
+     "sigma": 3.720030757528218
+    },
+    {
+     "feature": "extent",
+     "true": 37.22073477391369,
+     "meas": 38.291774280973854,
+     "sigma": 0.08021478762237372
+    },
+    {
+     "feature": "extent",
+     "true": 25.697140899312572,
+     "meas": 26.073043618490928,
+     "sigma": 0.08021478762237325
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2860717092600039,
+   "n_circles": 2,
+   "seconds": 6.463597059249878,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te047",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.56,
+     "meas": 4.436155981323016,
+     "sigma": 5.501688024378594
+    },
+    {
+     "feature": "extent",
+     "true": 36.24813467765514,
+     "meas": 36.26905451591524,
+     "sigma": 0.15875904790887707
+    },
+    {
+     "feature": "extent",
+     "true": 37.76114805742543,
+     "meas": 37.744433719300865,
+     "sigma": 0.15875904790887707
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2895719627167939,
+   "n_circles": 6,
+   "seconds": 8.329288005828857,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va091",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.6,
+     "meas": 13.993219528562449,
+     "sigma": 1.4265072174866564
+    },
+    {
+     "feature": "extent",
+     "true": 52.5871872979599,
+     "meas": 53.2060877972408,
+     "sigma": 0.17709645855728107
+    },
+    {
+     "feature": "extent",
+     "true": 24.679982095499582,
+     "meas": 25.5196560346132,
+     "sigma": 0.17709645855728023
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.31312260517179435,
+   "n_circles": 3,
+   "seconds": 7.735973119735718,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te043",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.076046076686863,
+     "meas": 2.92879622212124,
+     "sigma": 3.8403116281445677
+    },
+    {
+     "feature": "extent",
+     "true": 47.508883898914476,
+     "meas": 48.76667934219959,
+     "sigma": 0.22750802859221786
+    },
+    {
+     "feature": "extent",
+     "true": 22.260856620646422,
+     "meas": 22.667493430487202,
+     "sigma": 0.22750802859221764
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3830067498233483,
+   "n_circles": 2,
+   "seconds": 6.903962135314941,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va086",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 17.51,
+     "meas": 18.11727014348646,
+     "sigma": 1.787223259348005
+    },
+    {
+     "feature": "extent",
+     "true": 61.067082080071295,
+     "meas": 62.65881653158682,
+     "sigma": 0.16121393947466087
+    },
+    {
+     "feature": "extent",
+     "true": 23.91452658805018,
+     "meas": 24.231424355793276,
+     "sigma": 0.16121393947466145
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.31954007503444115,
+   "n_circles": 1,
+   "seconds": 8.088610887527466,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va098",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.22,
+     "meas": 12.666109578432428,
+     "sigma": 1.9258005385117833
+    },
+    {
+     "feature": "extent",
+     "true": 42.69355654754655,
+     "meas": 42.70490165224055,
+     "sigma": 0.19730077265767826
+    },
+    {
+     "feature": "extent",
+     "true": 29.697101572942017,
+     "meas": 29.21388118803663,
+     "sigma": 0.19730077265767804
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.28751746119665256,
+   "n_circles": 0,
+   "seconds": 7.044867992401123,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va012",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 10.13,
+     "meas": 11.633463475616779,
+     "sigma": 1.5962948575118086
+    },
+    {
+     "feature": "extent",
+     "true": 61.10901491732103,
+     "meas": 62.99522877223843,
+     "sigma": 0.11688357582241946
+    },
+    {
+     "feature": "extent",
+     "true": 19.082286354866753,
+     "meas": 20.12315027472916,
+     "sigma": 0.11688357582242027
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2861103820866437,
+   "n_circles": 4,
+   "seconds": 9.541175127029419,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te005",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 11.9,
+     "meas": 11.449400864746032,
+     "sigma": 1.4117863450233086
+    },
+    {
+     "feature": "extent",
+     "true": 22.305225608705967,
+     "meas": 22.110741424502343,
+     "sigma": 0.19447148957545102
+    },
+    {
+     "feature": "extent",
+     "true": 17.832372524126683,
+     "meas": 17.35198562801459,
+     "sigma": 0.19447148957545102
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3000691441519573,
+   "n_circles": 2,
+   "seconds": 7.469438076019287,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te050",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 7.8,
+     "meas": 8.1602415388925,
+     "sigma": 1.3125039986459812
+    },
+    {
+     "feature": "extent",
+     "true": 20.69388180177595,
+     "meas": 20.073339921486685,
+     "sigma": 0.09083343856755405
+    },
+    {
+     "feature": "extent",
+     "true": 16.168913335224744,
+     "meas": 15.432095367782912,
+     "sigma": 0.09083343856755452
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.36264981497235826,
+   "n_circles": 1,
+   "seconds": 10.54398775100708,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te016",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 6.31,
+     "meas": 6.60127311764223,
+     "sigma": 0.9517096419026964
+    },
+    {
+     "feature": "extent",
+     "true": 18.800877408718073,
+     "meas": 18.30555452651493,
+     "sigma": 0.09272520554750427
+    },
+    {
+     "feature": "extent",
+     "true": 14.185224821416966,
+     "meas": 14.023018966332291,
+     "sigma": 0.09272520554750355
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2986860218534228,
+   "n_circles": 1,
+   "seconds": 5.166039943695068,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te027",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 15.17,
+     "meas": 3.626108980187352,
+     "sigma": 5.893496346079306
+    },
+    {
+     "feature": "extent",
+     "true": 35.7450444690394,
+     "meas": 36.348666248703545,
+     "sigma": 0.07476771973723144
+    },
+    {
+     "feature": "extent",
+     "true": 27.030706412082395,
+     "meas": 28.250441812175673,
+     "sigma": 0.07476771973723213
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.27454980793954553,
+   "n_circles": 1,
+   "seconds": 7.267181873321533,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te026",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 10.94,
+     "meas": 9.39483013610843,
+     "sigma": 1.9893546076898936
+    },
+    {
+     "feature": "extent",
+     "true": 22.75363894523725,
+     "meas": 23.644566874906555,
+     "sigma": 0.41150815808852254
+    },
+    {
+     "feature": "extent",
+     "true": 14.85368967172542,
+     "meas": 15.191235461980336,
+     "sigma": 0.4115081580885225
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.28731522144873317,
+   "n_circles": 1,
+   "seconds": 5.374337196350098,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te022",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 6.6,
+     "meas": 6.616036237178532,
+     "sigma": 1.6218573535742737
+    },
+    {
+     "feature": "extent",
+     "true": 21.524150481528125,
+     "meas": 21.093864918548537,
+     "sigma": 0.06431369071617647
+    },
+    {
+     "feature": "extent",
+     "true": 17.605625702585172,
+     "meas": 17.307326701390604,
+     "sigma": 0.06431369071617647
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.28412505490121504,
+   "n_circles": 0,
+   "seconds": 5.155588865280151,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va030",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 14.72,
+     "meas": 14.851876540023719,
+     "sigma": 2.1922474472039135
+    },
+    {
+     "feature": "extent",
+     "true": 41.18337626725455,
+     "meas": 42.282874907556554,
+     "sigma": 0.08377236812176894
+    },
+    {
+     "feature": "extent",
+     "true": 19.975074961000118,
+     "meas": 19.849566824521542,
+     "sigma": 0.08377236812177118
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2868059273812688,
+   "n_circles": 0,
+   "seconds": 12.834352970123291,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te056",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.779999982756628,
+     "meas": 2.673895776872126,
+     "sigma": 4.281193929152502
+    },
+    {
+     "feature": "extent",
+     "true": 33.03751615154444,
+     "meas": 33.08890432408721,
+     "sigma": 0.09517302503364458
+    },
+    {
+     "feature": "extent",
+     "true": 25.35898249589844,
+     "meas": 25.693882061513992,
+     "sigma": 0.09517302503364367
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2840162373216652,
+   "n_circles": 2,
+   "seconds": 6.602149963378906,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va083",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 17.63,
+     "meas": 21.52091152925847,
+     "sigma": 1.1535941344390885
+    },
+    {
+     "feature": "extent",
+     "true": 54.548543616209,
+     "meas": 55.66343525504627,
+     "sigma": 0.09717218101587093
+    },
+    {
+     "feature": "extent",
+     "true": 22.08644911977109,
+     "meas": 23.168809578511123,
+     "sigma": 0.09717218101587125
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.29034229019935237,
+   "n_circles": 0,
+   "seconds": 7.570962905883789,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va015",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 19.29,
+     "meas": 17.933761708750247,
+     "sigma": 2.671843863459925
+    },
+    {
+     "feature": "extent",
+     "true": 43.94071489683667,
+     "meas": 44.90231644379413,
+     "sigma": 0.13008720118453515
+    },
+    {
+     "feature": "extent",
+     "true": 22.420490156771116,
+     "meas": 23.91737037636353,
+     "sigma": 0.13008720118453554
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3632264919069786,
+   "n_circles": 0,
+   "seconds": 7.191678285598755,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te021",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 11.3,
+     "meas": 11.936746418107223,
+     "sigma": 1.5923999743436006
+    },
+    {
+     "feature": "extent",
+     "true": 19.642169343666737,
+     "meas": 19.60815562640702,
+     "sigma": 0.17268159029540997
+    },
+    {
+     "feature": "extent",
+     "true": 15.954750286307878,
+     "meas": 15.907380144120202,
+     "sigma": 0.1726815902954103
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2932317062399487,
+   "n_circles": 2,
+   "seconds": 5.59810996055603,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te023",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.156364391234366,
+     "meas": 1.9844821223060727,
+     "sigma": 4.5920716659023
+    },
+    {
+     "feature": "extent",
+     "true": 35.82600896190661,
+     "meas": 36.85611197747438,
+     "sigma": 0.07843975747932667
+    },
+    {
+     "feature": "extent",
+     "true": 28.286702695618835,
+     "meas": 28.19575283344623,
+     "sigma": 0.07843975747932655
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2882002060078971,
+   "n_circles": 0,
+   "seconds": 6.802437782287598,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va084",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 18.23,
+     "meas": 18.56795418537859,
+     "sigma": 2.3249879208543147
+    },
+    {
+     "feature": "extent",
+     "true": 50.5229641108169,
+     "meas": 50.47959992729713,
+     "sigma": 0.14156648226851434
+    },
+    {
+     "feature": "extent",
+     "true": 26.345204253696096,
+     "meas": 26.69926548613387,
+     "sigma": 0.14156648226851376
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.28622690031195297,
+   "n_circles": 0,
+   "seconds": 7.253097772598267,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te036",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 11.57,
+     "meas": 11.779711521918896,
+     "sigma": 1.005533951058743
+    },
+    {
+     "feature": "extent",
+     "true": 20.745896751212697,
+     "meas": 20.295095946525073,
+     "sigma": 0.1274371939158954
+    },
+    {
+     "feature": "extent",
+     "true": 15.879701490571165,
+     "meas": 15.47767519422661,
+     "sigma": 0.1274371939158951
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.33753880896951954,
+   "n_circles": 1,
+   "seconds": 5.412476062774658,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te027",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.179933967239212,
+     "meas": 2.5229807548132426,
+     "sigma": 3.544429156596166
+    },
+    {
+     "feature": "extent",
+     "true": 40.608992061048866,
+     "meas": 41.33702517392239,
+     "sigma": 0.07944339851605971
+    },
+    {
+     "feature": "extent",
+     "true": 30.975534288922617,
+     "meas": 30.762155373843072,
+     "sigma": 0.07944339851606011
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.27987112705984285,
+   "n_circles": 2,
+   "seconds": 6.79964280128479,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te015",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 16.25,
+     "meas": 3.796184095412816,
+     "sigma": 5.230101529555425
+    },
+    {
+     "feature": "extent",
+     "true": 32.69931657428022,
+     "meas": 34.052109004637536,
+     "sigma": 0.11128520695844665
+    },
+    {
+     "feature": "extent",
+     "true": 30.785073068293613,
+     "meas": 31.00693195862144,
+     "sigma": 0.11128520695844565
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.30484677864577303,
+   "n_circles": 1,
+   "seconds": 7.290143013000488,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te046",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 7.357661441995102,
+     "meas": 3.123216887992554,
+     "sigma": 4.21984301288642
+    },
+    {
+     "feature": "extent",
+     "true": 47.72954960829808,
+     "meas": 48.75438883864296,
+     "sigma": 0.11253306237304392
+    },
+    {
+     "feature": "extent",
+     "true": 26.48090094944078,
+     "meas": 26.699555550754006,
+     "sigma": 0.11253306237304392
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3185565350212472,
+   "n_circles": 2,
+   "seconds": 7.650878190994263,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te009",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 11.35,
+     "meas": 10.67535032598442,
+     "sigma": 1.4418479795735006
+    },
+    {
+     "feature": "extent",
+     "true": 20.716068432629786,
+     "meas": 20.516413874480527,
+     "sigma": 0.10003733974115539
+    },
+    {
+     "feature": "extent",
+     "true": 14.375629645788948,
+     "meas": 14.367294621363058,
+     "sigma": 0.10003733974115588
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.287724262564282,
+   "n_circles": 0,
+   "seconds": 5.412986755371094,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te053",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 7.736604586150957,
+     "meas": 3.3647707111854053,
+     "sigma": 3.184599658705242
+    },
+    {
+     "feature": "extent",
+     "true": 30.117116876954515,
+     "meas": 31.74458424654569,
+     "sigma": 0.08102998260415875
+    },
+    {
+     "feature": "extent",
+     "true": 20.818898387899367,
+     "meas": 21.0682439772666,
+     "sigma": 0.08102998260415875
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.30494442995744847,
+   "n_circles": 2,
+   "seconds": 6.3784730434417725,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te014",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 13.17,
+     "meas": 3.3210566602552354,
+     "sigma": 7.0549437221770175
+    },
+    {
+     "feature": "extent",
+     "true": 39.337869003182306,
+     "meas": 41.805333629878255,
+     "sigma": 0.24707914957380506
+    },
+    {
+     "feature": "extent",
+     "true": 31.505286234469082,
+     "meas": 32.43791342151943,
+     "sigma": 0.24707914957380506
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3156267902179317,
+   "n_circles": 1,
+   "seconds": 7.474884033203125,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va057",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 17.87,
+     "meas": 18.479050903445362,
+     "sigma": 0.6649284621205531
+    },
+    {
+     "feature": "extent",
+     "true": 38.32094542796784,
+     "meas": 36.584111786353525,
+     "sigma": 0.14576943616870042
+    },
+    {
+     "feature": "extent",
+     "true": 29.700066757276062,
+     "meas": 28.06519160439647,
+     "sigma": 0.14576943616870092
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.35728460802791884,
+   "n_circles": 0,
+   "seconds": 6.922742128372192,
+   "role": "eval"
+  },
+  {
+   "uid": "rack_clip_te034",
+   "family": "rack_clip",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.46,
+     "meas": 8.497514619772684,
+     "sigma": 1.1509084956597895
+    },
+    {
+     "feature": "extent",
+     "true": 19.43738135050839,
+     "meas": 18.93669198979866,
+     "sigma": 0.05929071419395801
+    },
+    {
+     "feature": "extent",
+     "true": 14.78868249437069,
+     "meas": 14.220297074025469,
+     "sigma": 0.05929071419395763
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2923210360784368,
+   "n_circles": 0,
+   "seconds": 6.177196025848389,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te005",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 7.735318397975202,
+     "meas": 2.3394565994996994,
+     "sigma": 4.293187640988358
+    },
+    {
+     "feature": "extent",
+     "true": 38.281220366943444,
+     "meas": 39.21148578581507,
+     "sigma": 0.33315301638447387
+    },
+    {
+     "feature": "extent",
+     "true": 32.412271559683106,
+     "meas": 32.74155851316858,
+     "sigma": 0.3331530163844738
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.30505349136482707,
+   "n_circles": 0,
+   "seconds": 6.805025815963745,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te005",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.510000000000002,
+     "meas": 0,
+     "sigma": null
+    },
+    {
+     "feature": "extent",
+     "true": 22.924114327566507,
+     "meas": 0,
+     "sigma": null
+    },
+    {
+     "feature": "extent",
+     "true": 35.8598110282054,
+     "meas": 0,
+     "sigma": null
+    }
+   ],
+   "n_views_used": 0,
+   "calib_rms_px": 0.2983123468180146,
+   "n_circles": 0,
+   "seconds": 5.450255870819092,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va063",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.29,
+     "meas": 12.318896283938711,
+     "sigma": 1.717179535467836
+    },
+    {
+     "feature": "extent",
+     "true": 44.161322014043634,
+     "meas": 43.43110475339684,
+     "sigma": 0.17019354767441178
+    },
+    {
+     "feature": "extent",
+     "true": 27.824022484530992,
+     "meas": 27.31992765638937,
+     "sigma": 0.17019354767441164
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.288954608873091,
+   "n_circles": 1,
+   "seconds": 6.6762309074401855,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te014",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 7.457945033395367,
+     "meas": 5.983181636043604,
+     "sigma": 0.7389272638359652
+    },
+    {
+     "feature": "extent",
+     "true": 48.349652506858085,
+     "meas": 47.98636541332755,
+     "sigma": 0.10888201335169673
+    },
+    {
+     "feature": "extent",
+     "true": 33.88072276784864,
+     "meas": 33.26916290061779,
+     "sigma": 0.10888201335169673
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2935303786498386,
+   "n_circles": 4,
+   "seconds": 6.995203971862793,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te045",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.96,
+     "meas": 2.9830883665444223,
+     "sigma": 4.004590364242511
+    },
+    {
+     "feature": "extent",
+     "true": 41.896569290361285,
+     "meas": 42.68272838934741,
+     "sigma": 0.1306590831105493
+    },
+    {
+     "feature": "extent",
+     "true": 19.255593493582438,
+     "meas": 20.130845089091533,
+     "sigma": 0.13065908311054952
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.29610667420369924,
+   "n_circles": 0,
+   "seconds": 6.270409107208252,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te030",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 18.1,
+     "meas": 24.521961103717537,
+     "sigma": 3.024879131338216
+    },
+    {
+     "feature": "extent",
+     "true": 47.277533619561915,
+     "meas": 44.43090120131729,
+     "sigma": 0.15080057495134902
+    },
+    {
+     "feature": "extent",
+     "true": 39.76497254501791,
+     "meas": 36.46871887116193,
+     "sigma": 0.15080057495134902
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.300523115897785,
+   "n_circles": 7,
+   "seconds": 7.939539909362793,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va064",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 12.71,
+     "meas": 15.093456381693642,
+     "sigma": 0.5573452301653831
+    },
+    {
+     "feature": "extent",
+     "true": 39.45948847570223,
+     "meas": 40.02267084729728,
+     "sigma": 0.09370060213935097
+    },
+    {
+     "feature": "extent",
+     "true": 22.84319560853089,
+     "meas": 23.64626037366103,
+     "sigma": 0.09370060213935152
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.29476817171424896,
+   "n_circles": 2,
+   "seconds": 6.046302080154419,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va087",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 18.51,
+     "meas": 18.68791296788086,
+     "sigma": 17.887082817719968
+    },
+    {
+     "feature": "extent",
+     "true": 28.93330817531526,
+     "meas": 4.0587715148269305,
+     "sigma": 0.3
+    },
+    {
+     "feature": "extent",
+     "true": 35.81402891363019,
+     "meas": 2.2044749253121516,
+     "sigma": 0.3
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2835360857735292,
+   "n_circles": 1,
+   "seconds": 9.75622820854187,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va041",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 15.46,
+     "meas": 17.87397208924156,
+     "sigma": 0.9703074100336635
+    },
+    {
+     "feature": "extent",
+     "true": 38.77747500306252,
+     "meas": 40.1320566009168,
+     "sigma": 0.1961546245531342
+    },
+    {
+     "feature": "extent",
+     "true": 23.74906193391986,
+     "meas": 23.63371275620253,
+     "sigma": 0.1961546245531346
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.2930633943498489,
+   "n_circles": 1,
+   "seconds": 7.837277173995972,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te011",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 8.76,
+     "meas": 2.204322254832066,
+     "sigma": 3.7250215399360203
+    },
+    {
+     "feature": "extent",
+     "true": 25.79816929547765,
+     "meas": 26.28301667168568,
+     "sigma": 0.07349050813316123
+    },
+    {
+     "feature": "extent",
+     "true": 20.62914743150911,
+     "meas": 21.229394146288293,
+     "sigma": 0.07349050813316123
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.291444532357037,
+   "n_circles": 1,
+   "seconds": 5.6234190464019775,
+   "role": "eval"
+  },
+  {
+   "uid": "end_cap_rect_te000",
+   "family": "end_cap_rect",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 9.47,
+     "meas": 3.223325837192033,
+     "sigma": 4.367120642749752
+    },
+    {
+     "feature": "extent",
+     "true": 36.384308834418874,
+     "meas": 37.08223425986517,
+     "sigma": 0.1493236038171899
+    },
+    {
+     "feature": "extent",
+     "true": 26.897606694063114,
+     "meas": 27.5464918541339,
+     "sigma": 0.14932360381719167
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3790285205135438,
+   "n_circles": 0,
+   "seconds": 6.48629093170166,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va062",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 18.27,
+     "meas": 18.24213594765581,
+     "sigma": 1.7145663784112688
+    },
+    {
+     "feature": "extent",
+     "true": 61.56959795675289,
+     "meas": 61.23023654326953,
+     "sigma": 0.06971668783351678
+    },
+    {
+     "feature": "extent",
+     "true": 35.29794214314616,
+     "meas": 34.665501306781366,
+     "sigma": 0.06971668783351678
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.27575661403166624,
+   "n_circles": 5,
+   "seconds": 7.55522084236145,
+   "role": "eval"
+  },
+  {
+   "uid": "hook_va067",
+   "family": "hook",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 14.11,
+     "meas": 16.44722618498389,
+     "sigma": 1.6212808579783509
+    },
+    {
+     "feature": "extent",
+     "true": 57.433855127559326,
+     "meas": 58.60887610159503,
+     "sigma": 0.16849810740891416
+    },
+    {
+     "feature": "extent",
+     "true": 22.82016526128237,
+     "meas": 24.525636386904946,
+     "sigma": 0.16849810740891488
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.39347228738098217,
+   "n_circles": 2,
+   "seconds": 6.00620698928833,
+   "role": "eval"
+  },
+  {
+   "uid": "hinge_leaf_te057",
+   "family": "hinge_leaf",
+   "rows": [
+    {
+     "feature": "height",
+     "true": 5.9381292173908395,
+     "meas": 2.4892864609057126,
+     "sigma": 3.9566542813133543
+    },
+    {
+     "feature": "extent",
+     "true": 42.85469585232832,
+     "meas": 44.01776016840476,
+     "sigma": 0.20391697064145725
+    },
+    {
+     "feature": "extent",
+     "true": 31.31706108814739,
+     "meas": 31.788955791101447,
+     "sigma": 0.20391697064145659
+    }
+   ],
+   "n_views_used": 8,
+   "calib_rms_px": 0.3013695606577825,
+   "n_circles": 2,
+   "seconds": 6.091568231582642,
+   "role": "eval"
+  }
+ ]
+}

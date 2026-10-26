@@ -1,0 +1,6 @@
+valid          agree=1.000 [1.000,1.000] kappa=1.00 P=0.99 H=0.99 P-only=0 H-only=0
+fit_pass       agree=0.975 [0.953,0.992] kappa=0.95 P=0.57 H=0.55 P-only=15 H-only=0
+dims_pass      agree=1.000 [1.000,1.000] kappa=1.00 P=0.82 H=0.82 P-only=0 H-only=0
+print_pass     agree=0.913 [0.867,0.952] kappa=0.15 P=0.97 H=0.93 P-only=39 H-only=13
+strength_pass  agree=0.937 [0.902,0.968] kappa=0.62 P=0.94 H=0.88 P-only=38 H-only=0
+all_pass       agree=0.903 [0.865,0.938] kappa=0.81 P=0.56 H=0.48 P-only=52 H-only=6

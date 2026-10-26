@@ -1,0 +1,38 @@
+test caliper/full@default {'n': 180, 'fit_pass': 0.9555555555555556, 'ci95': [0.9222222222222223, 0.9833333333333333]}
+test caliper/full@virtual {'n': 180, 'fit_pass': 0.7833333333333333, 'ci95': [0.7166666666666667, 0.8388888888888889]}
+test caliper/full:errors {'mating_abs_err_median': 0.021000000000000796, 'mating_abs_err_p90': 0.04800000000000004, 'critical_design_abs_err_median': 0.020000000000000018, 'critical_design_abs_err_p90': 0.040000000000000036}
+test photo_only/full@default {'n': 180, 'fit_pass': 0.005555555555555556, 'ci95': [0.0, 0.016666666666666666]}
+test photo_only/full@virtual {'n': 180, 'fit_pass': 0.005555555555555556, 'ci95': [0.0, 0.016666666666666666]}
+test photo_only/full:errors {'mating_abs_err_median': 0.5299999999999998, 'mating_abs_err_p90': 1.083700000000001, 'critical_design_abs_err_median': 0.5, 'critical_design_abs_err_p90': 1.031000000000002}
+test no_mating_item/full@default {'n': 180, 'fit_pass': 0.5555555555555556, 'ci95': [0.48333333333333334, 0.6277777777777778]}
+test no_mating_item/full@virtual {'n': 180, 'fit_pass': 0.43333333333333335, 'ci95': [0.3611111111111111, 0.5055555555555555]}
+test no_mating_item/full:errors {'mating_abs_err_median': 0.030999999999999972, 'mating_abs_err_p90': 0.3610999999999998, 'critical_design_abs_err_median': 0.08999999999999986, 'critical_design_abs_err_p90': 0.4500000000000002}
+test caliper/no_tolerance@default {'n': 180, 'fit_pass': 0.03333333333333333, 'ci95': [0.011111111111111112, 0.06666666666666667]}
+test caliper/no_tolerance@virtual {'n': 180, 'fit_pass': 0.06666666666666667, 'ci95': [0.03333333333333333, 0.10555555555555556]}
+test caliper/no_tolerance:errors {'mating_abs_err_median': 0.021000000000000796, 'mating_abs_err_p90': 0.04800000000000004, 'critical_design_abs_err_median': 0.43510000000000026, 'critical_design_abs_err_p90': 0.8645199999999998}
+test caliper/no_mating@default {'n': 180, 'fit_pass': 0.07777777777777778, 'ci95': [0.044444444444444446, 0.11666666666666667]}
+test caliper/no_mating@virtual {'n': 180, 'fit_pass': 0.15555555555555556, 'ci95': [0.11097222222222222, 0.2111111111111111]}
+test caliper/no_mating:errors {'mating_abs_err_median': 0.021000000000000796, 'mating_abs_err_p90': 0.04800000000000004, 'critical_design_abs_err_median': 0.27100000000000013, 'critical_design_abs_err_p90': 0.46209999999999973}
+test no_mating_item/no_tolerance@default {'n': 180, 'fit_pass': 0.03333333333333333, 'ci95': [0.011111111111111112, 0.06666666666666667]}
+test no_mating_item/no_tolerance@virtual {'n': 180, 'fit_pass': 0.06666666666666667, 'ci95': [0.03333333333333333, 0.10555555555555556]}
+test no_mating_item/no_tolerance:errors {'mating_abs_err_median': 0.030999999999999972, 'mating_abs_err_p90': 0.3610999999999998, 'critical_design_abs_err_median': 0.43510000000000026, 'critical_design_abs_err_p90': 0.8645199999999998}
+test photo_only/full/no_std_sizes@default {'n': 180, 'fit_pass': 0.005555555555555556, 'ci95': [0.0, 0.016666666666666666]}
+test photo_only/full/no_std_sizes@virtual {'n': 180, 'fit_pass': 0.005555555555555556, 'ci95': [0.0, 0.016666666666666666]}
+test photo_only/full/no_std_sizes:errors {'mating_abs_err_median': 0.47050000000000036, 'mating_abs_err_p90': 1.083700000000001, 'critical_design_abs_err_median': 0.5, 'critical_design_abs_err_p90': 1.031000000000002}
+test no_mating_item/full/no_std_sizes@default {'n': 180, 'fit_pass': 0.5555555555555556, 'ci95': [0.48333333333333334, 0.6277777777777778]}
+test no_mating_item/full/no_std_sizes@virtual {'n': 180, 'fit_pass': 0.39444444444444443, 'ci95': [0.32222222222222224, 0.4666666666666667]}
+test no_mating_item/full/no_std_sizes:errors {'mating_abs_err_median': 0.049000000000000266, 'mating_abs_err_p90': 0.3610999999999998, 'critical_design_abs_err_median': 0.11999999999999944, 'critical_design_abs_err_p90': 0.4500000000000002}
+caliper/full - photo_only/full @default {'n': 180, 'diff': 0.95, 'ci95': [0.9111111111111111, 0.9777777777777777], 'p': 0.0}
+caliper/full - no_mating_item/full @default {'n': 180, 'diff': 0.4, 'ci95': [0.3276388888888889, 0.4722222222222222], 'p': 0.0}
+caliper/full - caliper/no_tolerance @default {'n': 180, 'diff': 0.9222222222222223, 'ci95': [0.8777777777777778, 0.9611111111111111], 'p': 0.0}
+caliper/full - caliper/no_mating @default {'n': 180, 'diff': 0.8777777777777778, 'ci95': [0.8277777777777777, 0.9222222222222223], 'p': 0.0}
+caliper/full - no_mating_item/no_tolerance @default {'n': 180, 'diff': 0.9222222222222223, 'ci95': [0.8777777777777778, 0.9611111111111111], 'p': 0.0}
+caliper/full - photo_only/full/no_std_sizes @default {'n': 180, 'diff': 0.95, 'ci95': [0.9111111111111111, 0.9777777777777777], 'p': 0.0}
+caliper/full - no_mating_item/full/no_std_sizes @default {'n': 180, 'diff': 0.4, 'ci95': [0.3276388888888889, 0.4722222222222222], 'p': 0.0}
+caliper/full - photo_only/full @virtual {'n': 180, 'diff': 0.7777777777777778, 'ci95': [0.7166666666666667, 0.8388888888888889], 'p': 0.0}
+caliper/full - no_mating_item/full @virtual {'n': 180, 'diff': 0.35, 'ci95': [0.2833333333333333, 0.4222222222222222], 'p': 0.0}
+caliper/full - caliper/no_tolerance @virtual {'n': 180, 'diff': 0.7166666666666667, 'ci95': [0.65, 0.7833333333333333], 'p': 0.0}
+caliper/full - caliper/no_mating @virtual {'n': 180, 'diff': 0.6277777777777778, 'ci95': [0.5555555555555556, 0.7055555555555556], 'p': 0.0}
+caliper/full - no_mating_item/no_tolerance @virtual {'n': 180, 'diff': 0.7166666666666667, 'ci95': [0.65, 0.7833333333333333], 'p': 0.0}
+caliper/full - photo_only/full/no_std_sizes @virtual {'n': 180, 'diff': 0.7777777777777778, 'ci95': [0.7166666666666667, 0.8388888888888889], 'p': 0.0}
+caliper/full - no_mating_item/full/no_std_sizes @virtual {'n': 180, 'diff': 0.3888888888888889, 'ci95': [0.32222222222222224, 0.46111111111111114], 'p': 0.0}
