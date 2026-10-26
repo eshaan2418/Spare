@@ -46,3 +46,8 @@ exclude = ["data/", "results/"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 markers = ["slow: long-running", "slicer: needs PrusaSlicer CLI"]
+
+[[tool.mypy.overrides]]
+# image/array pipelines: numpy dtype-narrowing on reassignment is noise here
+module = ["spare.synth.render", "spare.metrology.*", "spare.capture.*"]
+disable_error_code = ["assignment"]
