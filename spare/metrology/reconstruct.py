@@ -384,7 +384,7 @@ def refine_outline(P2: np.ndarray, N2: np.ndarray, z: float, views, grads, searc
             nn = np.linalg.norm(n)
             if nn < 1e-6:
                 continue
-            e = _edge_along(None, gx, gy, p, n / nn, search_px)
+            e = _edge_along(None, gx, gy, p, n / nn, search_px)  # type: ignore[arg-type]
             if e is not None:
                 pts.append(e)
                 src.append(k)

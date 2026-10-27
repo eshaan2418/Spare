@@ -47,6 +47,16 @@ def _capture(src, seed, n_views=8):
 
 
 def job(args) -> dict:
+    try:
+        return _job(args)
+    except Exception as e:  # noqa: BLE001
+        import traceback
+
+        return {"kind": args[0], "uid": args[1]["uid"], "family": args[1]["family"],
+                "error": f"{type(e).__name__}: {e}", "where": traceback.format_exc().splitlines()[-3][:200]}
+
+
+def _job(args) -> dict:
     kind, rec, seed = args
     os.environ.setdefault("OMP_NUM_THREADS", "1")
     from spare.features.completion import complete_round
@@ -62,7 +72,11 @@ def job(args) -> dict:
             return {**out, "error": "exec"}
         m, _, _ = R.measure_part(c[0]["images"], c[1], n_boot=0)
         det = set()
+        bosses = [ci for ci in m.circles if ci.kind == "boss"]
+        body = max(bosses, key=lambda ci: ci.d) if bosses else None  # outer body outline is not a feature
         for ci in m.circles:
+            if ci is body:
+                continue
             if ci.kind == "hole":
                 det.add("d_bore" if ci.flat_offset is not None else "through_hole")
             elif ci.kind == "blind_hole":

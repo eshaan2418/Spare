@@ -1,0 +1,7 @@
+/Users/eshaan.kapooswalla/Spare/spare/metrology/reconstruct.py:516: RuntimeWarning: Mean of empty slice
+  c = xy.mean(0)
+/Users/eshaan.kapooswalla/Spare/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:134: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+types {'blind_hole': {'tp': 0, 'fp': 18, 'fn': 1, 'precision': 0.0, 'recall': 0.0}, 'boss': {'tp': 0, 'fp': 2, 'fn': 2, 'precision': 0.0, 'recall': 0.0}, 'd_bore': {'tp': 2, 'fp': 20, 'fn': 1, 'precision': 0.09090909090909091, 'recall': 0.6666666666666666}, 'through_hole': {'tp': 5, 'fp': 9, 'fn': 5, 'precision': 0.35714285714285715, 'recall': 0.5}} exact 0.3333333333333333
+mating {'n': 40, 'detected': 37, 'abs_err_median_raw': (0.3372135003006296, 0.21369129108212093, 1.1753697545520794), 'abs_err_p90_raw': 2.763242391736617, 'abs_err_median_with_standard_sizes': (0.020000000000000462, 0.020000000000000018, 1.1753697545520794), 'abs_err_p90_with_standard_sizes': 2.763242391736617, 'frac_within_0.1mm_with_standard_sizes': 0.5405405405405406, 'by_param': {'axle_diameter': 0.020000000000000018, 'bolt_diameter': 0.019999999999999574, 'shaft_diameter': 0.015000000000000124, 'tube_outer_diameter': 1.9241485170608383}}
+completion {'naive_extent': {'n': 40, 'of': 40, 'abs_err_median': 1.8023800984489355, 'abs_err_p90': 3.147456253314306}, 'circle_detector': {'n': 38, 'of': 40, 'abs_err_median': 0.9235310320200725, 'abs_err_p90': 1.7641018847943377}, 'rotational_completion': {'n': 38, 'of': 40, 'abs_err_median': 0.9041113773509348, 'abs_err_p90': 2.0023163408066544}}

@@ -1,0 +1,1634 @@
+{
+ "provenance": {
+  "git_commit": "3e0e802e593e790db39d36d11183829d82df26ab-dirty",
+  "data_snapshot": "bd2ee517e9873eba",
+  "checkpoint": "none",
+  "seed": 0,
+  "config": {
+   "n_types": 60,
+   "n_mating": 40,
+   "n_completion": 40,
+   "seed": 0,
+   "out": "results/m3/render.json"
+  },
+  "evidence_stage": "simulated",
+  "printer": null,
+  "material": null,
+  "timestamp": "2026-10-26T18:16:27",
+  "host": "macOS-27.0.1-arm64-arm-64bit"
+ },
+ "seconds": 93.1,
+ "feature_types": {
+  "per_type": {
+   "blind_hole": {
+    "tp": 0,
+    "fp": 18,
+    "fn": 1,
+    "precision": 0.0,
+    "recall": 0.0
+   },
+   "boss": {
+    "tp": 0,
+    "fp": 2,
+    "fn": 2,
+    "precision": 0.0,
+    "recall": 0.0
+   },
+   "d_bore": {
+    "tp": 2,
+    "fp": 20,
+    "fn": 1,
+    "precision": 0.09090909090909091,
+    "recall": 0.6666666666666666
+   },
+   "through_hole": {
+    "tp": 5,
+    "fp": 9,
+    "fn": 5,
+    "precision": 0.35714285714285715,
+    "recall": 0.5
+   }
+  },
+  "n_parts": 60,
+  "exact_set_match": 0.3333333333333333
+ },
+ "mating_from_photos": {
+  "n": 40,
+  "detected": 37,
+  "abs_err_median_raw": [
+   0.3372135003006296,
+   0.21369129108212093,
+   1.1753697545520794
+  ],
+  "abs_err_p90_raw": 2.763242391736617,
+  "abs_err_median_with_standard_sizes": [
+   0.020000000000000462,
+   0.020000000000000018,
+   1.1753697545520794
+  ],
+  "abs_err_p90_with_standard_sizes": 2.763242391736617,
+  "frac_within_0.1mm_with_standard_sizes": 0.5405405405405406,
+  "by_param": {
+   "axle_diameter": 0.020000000000000018,
+   "bolt_diameter": 0.019999999999999574,
+   "shaft_diameter": 0.015000000000000124,
+   "tube_outer_diameter": 1.9241485170608383
+  }
+ },
+ "completion_round": {
+  "naive_extent": {
+   "n": 40,
+   "of": 40,
+   "abs_err_median": 1.8023800984489355,
+   "abs_err_p90": 3.147456253314306
+  },
+  "circle_detector": {
+   "n": 38,
+   "of": 40,
+   "abs_err_median": 0.9235310320200725,
+   "abs_err_p90": 1.7641018847943377
+  },
+  "rotational_completion": {
+   "n": 38,
+   "of": 40,
+   "abs_err_median": 0.9041113773509348,
+   "abs_err_p90": 2.0023163408066544
+  }
+ },
+ "rows": [
+  {
+   "kind": "types",
+   "uid": "hook_va076",
+   "family": "hook",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "knob_dshaft_tid015",
+   "family": "knob_dshaft",
+   "gt": [
+    "d_bore"
+   ],
+   "det": [
+    "blind_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "end_cap_rect_te053",
+   "family": "end_cap_rect",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va016",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "blind_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "spacer_tid015",
+   "family": "spacer",
+   "gt": [
+    "through_hole"
+   ],
+   "det": [
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hinge_leaf_te028",
+   "family": "hinge_leaf",
+   "gt": [],
+   "det": [
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va079",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "blind_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "shelf_peg_tid019",
+   "family": "shelf_peg",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "hinge_leaf_te043",
+   "family": "hinge_leaf",
+   "gt": [],
+   "det": [
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "spacer_tid010",
+   "family": "spacer",
+   "gt": [
+    "through_hole"
+   ],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "shelf_peg_tid006",
+   "family": "shelf_peg",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "rack_clip_te051",
+   "family": "rack_clip",
+   "gt": [],
+   "det": [
+    "blind_hole",
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hinge_leaf_te058",
+   "family": "hinge_leaf",
+   "gt": [],
+   "det": [
+    "d_bore",
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "end_cap_rect_te052",
+   "family": "end_cap_rect",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va063",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "blind_hole",
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "rack_clip_te021",
+   "family": "rack_clip",
+   "gt": [],
+   "det": [
+    "blind_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "l_bracket_tid005",
+   "family": "l_bracket",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "spacer_tid017",
+   "family": "spacer",
+   "gt": [
+    "through_hole"
+   ],
+   "det": [
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "spacer_tid002",
+   "family": "spacer",
+   "gt": [
+    "through_hole"
+   ],
+   "det": [
+    "blind_hole",
+    "d_bore",
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "rack_clip_te000",
+   "family": "rack_clip",
+   "gt": [],
+   "det": [
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hinge_leaf_te012",
+   "family": "hinge_leaf",
+   "gt": [],
+   "det": [
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "wheel_grooved_tid000",
+   "family": "wheel_grooved",
+   "gt": [
+    "boss",
+    "through_hole"
+   ],
+   "det": [
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "spacer_tid001",
+   "family": "spacer",
+   "gt": [
+    "through_hole"
+   ],
+   "det": [
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va068",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "battery_cover_tid020",
+   "family": "battery_cover",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "end_cap_rect_te055",
+   "family": "end_cap_rect",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "knob_dshaft_tid007",
+   "family": "knob_dshaft",
+   "gt": [
+    "d_bore"
+   ],
+   "det": [
+    "blind_hole",
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "end_cap_rect_te054",
+   "family": "end_cap_rect",
+   "gt": [],
+   "det": [
+    "boss",
+    "d_bore",
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va046",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "blind_hole",
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "l_bracket_tid012",
+   "family": "l_bracket",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va018",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "blind_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "shelf_peg_tid000",
+   "family": "shelf_peg",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "knob_dshaft_tid011",
+   "family": "knob_dshaft",
+   "gt": [
+    "d_bore"
+   ],
+   "det": [
+    "blind_hole",
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va038",
+   "family": "hook",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "hinge_leaf_te002",
+   "family": "hinge_leaf",
+   "gt": [],
+   "det": [
+    "d_bore",
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "rack_clip_te022",
+   "family": "rack_clip",
+   "gt": [],
+   "det": [
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "rack_clip_te034",
+   "family": "rack_clip",
+   "gt": [],
+   "det": [
+    "blind_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hinge_leaf_te049",
+   "family": "hinge_leaf",
+   "gt": [],
+   "det": [
+    "d_bore",
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "spacer_tid013",
+   "family": "spacer",
+   "gt": [
+    "through_hole"
+   ],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "end_cap_rect_te059",
+   "family": "end_cap_rect",
+   "gt": [],
+   "det": [
+    "blind_hole",
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "end_cap_rect_te002",
+   "family": "end_cap_rect",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "end_cap_rect_te046",
+   "family": "end_cap_rect",
+   "gt": [],
+   "det": [
+    "blind_hole",
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "spacer_tid003",
+   "family": "spacer",
+   "gt": [
+    "through_hole"
+   ],
+   "det": [
+    "blind_hole",
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "battery_cover_tid014",
+   "family": "battery_cover",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "hinge_leaf_te027",
+   "family": "hinge_leaf",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "rack_clip_te031",
+   "family": "rack_clip",
+   "gt": [],
+   "det": [
+    "blind_hole",
+    "boss"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "end_cap_rect_te056",
+   "family": "end_cap_rect",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "battery_cover_tid022",
+   "family": "battery_cover",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "hinge_leaf_te018",
+   "family": "hinge_leaf",
+   "gt": [],
+   "det": [
+    "d_bore",
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va045",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va047",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "cap_round_tid007",
+   "family": "cap_round",
+   "gt": [
+    "blind_hole"
+   ],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va020",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "wheel_grooved_tid004",
+   "family": "wheel_grooved",
+   "gt": [
+    "boss",
+    "through_hole"
+   ],
+   "det": [
+    "blind_hole",
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "spacer_tid007",
+   "family": "spacer",
+   "gt": [
+    "through_hole"
+   ],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va089",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "d_bore"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "hook_va097",
+   "family": "hook",
+   "gt": [],
+   "det": [
+    "blind_hole"
+   ]
+  },
+  {
+   "kind": "types",
+   "uid": "end_cap_rect_te035",
+   "family": "end_cap_rect",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "shelf_peg_tid010",
+   "family": "shelf_peg",
+   "gt": [],
+   "det": []
+  },
+  {
+   "kind": "types",
+   "uid": "hinge_leaf_te059",
+   "family": "hinge_leaf",
+   "gt": [],
+   "det": [
+    "through_hole"
+   ]
+  },
+  {
+   "kind": "mating",
+   "uid": "wheel_grooved_tid013",
+   "family": "wheel_grooved",
+   "param": "axle_diameter",
+   "true": 4.99,
+   "meas": 5.3068753194080776,
+   "meas_standard": 4.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "wheel_grooved_tid019",
+   "family": "wheel_grooved",
+   "param": "axle_diameter",
+   "true": 3.99,
+   "meas": 4.203691291082121,
+   "meas_standard": 3.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid024",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 14.85,
+   "meas": 16.6012442682086,
+   "meas_standard": 16.6012442682086,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "wheel_grooved_tid016",
+   "family": "wheel_grooved",
+   "param": "axle_diameter",
+   "true": 5.97,
+   "meas": 6.096292627556468,
+   "meas_standard": 5.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "wheel_grooved_tid006",
+   "family": "wheel_grooved",
+   "param": "axle_diameter",
+   "true": 3.99,
+   "meas": 4.0406828759311875,
+   "meas_standard": 3.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid007",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 7.88,
+   "meas": 8.959835024420844,
+   "meas_standard": 8.959835024420844,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "spacer_tid004",
+   "family": "spacer",
+   "param": "bolt_diameter",
+   "true": 5.96,
+   "meas": 6.208424331547948,
+   "meas_standard": 5.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "spacer_tid018",
+   "family": "spacer",
+   "param": "bolt_diameter",
+   "true": 4.95,
+   "meas": 5.187689378729169,
+   "meas_standard": 4.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "spacer_tid005",
+   "family": "spacer",
+   "param": "bolt_diameter",
+   "true": 2.98,
+   "meas": null
+  },
+  {
+   "kind": "mating",
+   "uid": "spacer_tid024",
+   "family": "spacer",
+   "param": "bolt_diameter",
+   "true": 4.95,
+   "meas": 5.103784291854521,
+   "meas_standard": 4.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid009",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 32.04,
+   "meas": 34.137052765913076,
+   "meas_standard": 34.137052765913076,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "knob_dshaft_tid014",
+   "family": "knob_dshaft",
+   "param": "shaft_diameter",
+   "true": 5.95,
+   "meas": 6.453344384440096,
+   "meas_standard": 6.319999999999999,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "knob_dshaft_tid005",
+   "family": "knob_dshaft",
+   "param": "shaft_diameter",
+   "true": 4.96,
+   "meas": 5.1290600015771215,
+   "meas_standard": 4.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "spacer_tid012",
+   "family": "spacer",
+   "param": "bolt_diameter",
+   "true": 3.96,
+   "meas": 4.084206847931461,
+   "meas_standard": 3.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid016",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 21.85,
+   "meas": 24.647397783672286,
+   "meas_standard": 24.647397783672286,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "knob_dshaft_tid003",
+   "family": "knob_dshaft",
+   "param": "shaft_diameter",
+   "true": 6.34,
+   "meas": 6.663893977743922,
+   "meas_standard": 6.319999999999999,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "knob_dshaft_tid017",
+   "family": "knob_dshaft",
+   "param": "shaft_diameter",
+   "true": 6.31,
+   "meas": 6.301556743937485,
+   "meas_standard": 6.319999999999999,
+   "snapped": true,
+   "flat_detected": true
+  },
+  {
+   "kind": "mating",
+   "uid": "wheel_grooved_tid001",
+   "family": "wheel_grooved",
+   "param": "axle_diameter",
+   "true": 5.96,
+   "meas": 6.076437913584011,
+   "meas_standard": 5.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid022",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 24.86,
+   "meas": 28.223374580428946,
+   "meas_standard": 28.223374580428946,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid017",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 14.97,
+   "meas": 2.8008553981227258,
+   "meas_standard": 2.8008553981227258,
+   "snapped": false,
+   "flat_detected": true
+  },
+  {
+   "kind": "mating",
+   "uid": "knob_dshaft_tid001",
+   "family": "knob_dshaft",
+   "param": "shaft_diameter",
+   "true": 4.96,
+   "meas": null
+  },
+  {
+   "kind": "mating",
+   "uid": "wheel_grooved_tid015",
+   "family": "wheel_grooved",
+   "param": "axle_diameter",
+   "true": 5.99,
+   "meas": 6.632403845638232,
+   "meas_standard": 6.632403845638232,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid021",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 19.92,
+   "meas": 21.505579838892668,
+   "meas_standard": 21.505579838892668,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "spacer_tid014",
+   "family": "spacer",
+   "param": "bolt_diameter",
+   "true": 7.99,
+   "meas": 8.45174363086651,
+   "meas_standard": 7.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "spacer_tid000",
+   "family": "spacer",
+   "param": "bolt_diameter",
+   "true": 2.48,
+   "meas": 2.5667873172522944,
+   "meas_standard": 2.47,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "wheel_grooved_tid011",
+   "family": "wheel_grooved",
+   "param": "axle_diameter",
+   "true": 4.97,
+   "meas": 5.483757042952925,
+   "meas_standard": 4.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid011",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 27.92,
+   "meas": 30.39573453825521,
+   "meas_standard": 30.39573453825521,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "spacer_tid011",
+   "family": "spacer",
+   "param": "bolt_diameter",
+   "true": 4.99,
+   "meas": 5.172232134998743,
+   "meas_standard": 4.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid012",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 9.92,
+   "meas": 11.115367070454427,
+   "meas_standard": 11.115367070454427,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "wheel_grooved_tid007",
+   "family": "wheel_grooved",
+   "error": "IndexError: index -1 is out of bounds for axis 0 with size 0",
+   "where": "    slices_having_nans = np.isnan(arr[-1, ...])"
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid008",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 15.0,
+   "meas": 16.17536975455208,
+   "meas_standard": 16.17536975455208,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "knob_dshaft_tid019",
+   "family": "knob_dshaft",
+   "param": "shaft_diameter",
+   "true": 3.97,
+   "meas": 3.916879954385201,
+   "meas_standard": 3.97,
+   "snapped": true,
+   "flat_detected": true
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid019",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 16.05,
+   "meas": 17.49486131099503,
+   "meas_standard": 17.49486131099503,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "spacer_tid019",
+   "family": "spacer",
+   "param": "bolt_diameter",
+   "true": 5.95,
+   "meas": 6.11494613535831,
+   "meas_standard": 5.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid000",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 28.1,
+   "meas": 31.51069648137531,
+   "meas_standard": 31.51069648137531,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid010",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 28.0,
+   "meas": 30.74047213044617,
+   "meas_standard": 30.74047213044617,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "cap_round_tid020",
+   "family": "cap_round",
+   "param": "tube_outer_diameter",
+   "true": 15.05,
+   "meas": 16.46438516762198,
+   "meas_standard": 16.46438516762198,
+   "snapped": false,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "knob_dshaft_tid002",
+   "family": "knob_dshaft",
+   "param": "shaft_diameter",
+   "true": 5.99,
+   "meas": 6.32721350030063,
+   "meas_standard": 6.319999999999999,
+   "snapped": true,
+   "flat_detected": true
+  },
+  {
+   "kind": "mating",
+   "uid": "spacer_tid008",
+   "family": "spacer",
+   "param": "bolt_diameter",
+   "true": 2.99,
+   "meas": 3.0026836322853843,
+   "meas_standard": 2.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "mating",
+   "uid": "wheel_grooved_tid012",
+   "family": "wheel_grooved",
+   "param": "axle_diameter",
+   "true": 4.0,
+   "meas": 4.265640124188697,
+   "meas_standard": 3.97,
+   "snapped": true,
+   "flat_detected": false
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid024",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 237.30885099702635
+   },
+   "true_d": 38.28,
+   "naive_extent_d": 40.14845593970047,
+   "circle_detector_d": 39.89988706053891,
+   "completed_d": 40.65537087387905,
+   "arc_coverage_deg": 230.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid015",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 158.6746312758016
+   },
+   "true_d": 33.74,
+   "naive_extent_d": 35.54381172657828,
+   "circle_detector_d": 35.48816668103086,
+   "completed_d": 35.89069764713623,
+   "arc_coverage_deg": 290.0
+  },
+  {
+   "kind": "completion",
+   "uid": "cap_round_tid023",
+   "family": "cap_round",
+   "break": {
+    "type": "skirt_segment",
+    "angle_deg": 299.3357580986452
+   },
+   "true_d": 20.41,
+   "naive_extent_d": 21.8012740364742,
+   "circle_detector_d": 21.351238259908115,
+   "completed_d": 21.548167159405658,
+   "arc_coverage_deg": 330.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid022",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 102.02147732428882
+   },
+   "true_d": 29.61,
+   "naive_extent_d": 30.88485274944823,
+   "circle_detector_d": 30.54428233694143,
+   "completed_d": 30.499347294278905,
+   "arc_coverage_deg": 260.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid017",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 241.34204163436675
+   },
+   "true_d": 18.85,
+   "naive_extent_d": 20.178319855548857,
+   "circle_detector_d": 19.623103789002005,
+   "completed_d": 20.066131241665875,
+   "arc_coverage_deg": 280.0
+  },
+  {
+   "kind": "completion",
+   "uid": "spacer_tid006",
+   "family": "spacer",
+   "break": {
+    "type": "radial_wedge",
+    "angle_deg": 294.91445175685897
+   },
+   "true_d": 11.65,
+   "naive_extent_d": 13.591419580298474,
+   "circle_detector_d": 12.768581208446609,
+   "completed_d": 12.206193048823298,
+   "arc_coverage_deg": 290.0
+  },
+  {
+   "kind": "completion",
+   "uid": "spacer_tid010",
+   "family": "spacer",
+   "break": {
+    "type": "radial_wedge",
+    "angle_deg": 68.78465778513394
+   },
+   "true_d": 9.01,
+   "naive_extent_d": 9.676023275673185,
+   "circle_detector_d": 9.362573356372115,
+   "completed_d": 9.45928472769274,
+   "arc_coverage_deg": 360.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid014",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 0.38003470670416206
+   },
+   "true_d": 28.62,
+   "naive_extent_d": 29.147956664163623,
+   "circle_detector_d": 28.910492956697272,
+   "completed_d": 29.07577764480357,
+   "arc_coverage_deg": 340.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid024",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 207.73853319969103
+   },
+   "true_d": 21.72,
+   "naive_extent_d": 22.666672308889783,
+   "circle_detector_d": 22.738446749954715,
+   "completed_d": 22.353580340345648,
+   "arc_coverage_deg": 310.0
+  },
+  {
+   "kind": "completion",
+   "uid": "cap_round_tid003",
+   "family": "cap_round",
+   "break": {
+    "type": "skirt_segment",
+    "angle_deg": 179.73304411981937
+   },
+   "true_d": 22.97,
+   "naive_extent_d": 25.30317339237109,
+   "circle_detector_d": 24.139533250213653,
+   "completed_d": 23.875035733131295,
+   "arc_coverage_deg": 300.0
+  },
+  {
+   "kind": "completion",
+   "uid": "cap_round_tid004",
+   "family": "cap_round",
+   "break": {
+    "type": "skirt_segment",
+    "angle_deg": 26.649743426807
+   },
+   "true_d": 35.32,
+   "naive_extent_d": 37.52325948433697,
+   "circle_detector_d": 37.40591890468534,
+   "completed_d": 37.258724352379694,
+   "arc_coverage_deg": 290.0
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid009",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 163.50342153154523
+   },
+   "true_d": 37.64,
+   "naive_extent_d": 41.009839656029555,
+   "circle_detector_d": 39.14130598504594,
+   "completed_d": 41.12764750393562,
+   "arc_coverage_deg": 190.0
+  },
+  {
+   "kind": "completion",
+   "uid": "cap_round_tid011",
+   "family": "cap_round",
+   "break": {
+    "type": "skirt_segment",
+    "angle_deg": 73.50327566905102
+   },
+   "true_d": 31.279999999999998,
+   "naive_extent_d": 35.782928561984214,
+   "circle_detector_d": 33.21165990204199,
+   "completed_d": 34.03807474934257,
+   "arc_coverage_deg": 230.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid013",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 51.369324635280414
+   },
+   "true_d": 39.33,
+   "naive_extent_d": 41.75270128203694,
+   "circle_detector_d": 40.49235021508046,
+   "completed_d": 40.70333246400866,
+   "arc_coverage_deg": 250.0
+  },
+  {
+   "kind": "completion",
+   "uid": "spacer_tid000",
+   "family": "spacer",
+   "break": {
+    "type": "radial_wedge",
+    "angle_deg": 167.24533697947646
+   },
+   "true_d": 10.95,
+   "naive_extent_d": 11.505550488684316,
+   "circle_detector_d": 11.086345702121845,
+   "completed_d": 11.355537746174111,
+   "arc_coverage_deg": 360.0
+  },
+  {
+   "kind": "completion",
+   "uid": "cap_round_tid022",
+   "family": "cap_round",
+   "break": {
+    "type": "skirt_segment",
+    "angle_deg": 127.86253469054093
+   },
+   "true_d": 29.29,
+   "naive_extent_d": 32.412746986345944,
+   "circle_detector_d": 31.401998231650765,
+   "completed_d": 31.219084293350132,
+   "arc_coverage_deg": 270.0
+  },
+  {
+   "kind": "completion",
+   "uid": "spacer_tid002",
+   "family": "spacer",
+   "break": {
+    "type": "radial_wedge",
+    "angle_deg": 75.40916226970496
+   },
+   "true_d": 15.09,
+   "naive_extent_d": 17.277981635390827,
+   "circle_detector_d": 15.761408170927345,
+   "completed_d": 15.676026412112755,
+   "arc_coverage_deg": 300.0
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid001",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 268.5622248587661
+   },
+   "true_d": 39.0,
+   "naive_extent_d": 40.07506685612242,
+   "circle_detector_d": 40.34435692250399,
+   "completed_d": 40.91407842202307,
+   "arc_coverage_deg": 280.0
+  },
+  {
+   "kind": "completion",
+   "uid": "cap_round_tid001",
+   "family": "cap_round",
+   "break": {
+    "type": "skirt_segment",
+    "angle_deg": 12.486944272675116
+   },
+   "true_d": 30.490000000000002,
+   "naive_extent_d": 0,
+   "circle_detector_d": null,
+   "completed_d": null,
+   "arc_coverage_deg": null
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid008",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 78.95678616656859
+   },
+   "true_d": 21.26,
+   "naive_extent_d": 23.00103661303854,
+   "circle_detector_d": 21.858178756424127,
+   "completed_d": 21.87695764264478,
+   "arc_coverage_deg": 270.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid023",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 55.39837667333222
+   },
+   "true_d": 24.42,
+   "naive_extent_d": 26.353912215625687,
+   "circle_detector_d": 25.45198410274213,
+   "completed_d": 24.948283937875143,
+   "arc_coverage_deg": 300.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid008",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 252.38567193623476
+   },
+   "true_d": 31.16,
+   "naive_extent_d": 33.08247060994599,
+   "circle_detector_d": 31.834121647639055,
+   "completed_d": 31.68403415816181,
+   "arc_coverage_deg": 290.0
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid019",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 239.04600548321332
+   },
+   "true_d": 17.51,
+   "naive_extent_d": 16.47391070828659,
+   "circle_detector_d": 16.646232708385174,
+   "completed_d": 16.481443704638842,
+   "arc_coverage_deg": 280.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid021",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 41.65971090592846
+   },
+   "true_d": 38.87,
+   "naive_extent_d": 0,
+   "circle_detector_d": null,
+   "completed_d": null,
+   "arc_coverage_deg": null
+  },
+  {
+   "kind": "completion",
+   "uid": "cap_round_tid012",
+   "family": "cap_round",
+   "break": {
+    "type": "skirt_segment",
+    "angle_deg": 236.77490688749813
+   },
+   "true_d": 14.719999999999999,
+   "naive_extent_d": 15.308854302590392,
+   "circle_detector_d": 15.214849845981092,
+   "completed_d": 15.078521986445146,
+   "arc_coverage_deg": 360.0
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid023",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 45.43494814240651
+   },
+   "true_d": 28.86,
+   "naive_extent_d": 29.74368517734805,
+   "circle_detector_d": 29.586383180961747,
+   "completed_d": 29.585888906516736,
+   "arc_coverage_deg": 320.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid006",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 118.02694937152438
+   },
+   "true_d": 31.17,
+   "naive_extent_d": 31.619007152561974,
+   "circle_detector_d": 31.916736486177935,
+   "completed_d": 31.635811481891526,
+   "arc_coverage_deg": 290.0
+  },
+  {
+   "kind": "completion",
+   "uid": "spacer_tid004",
+   "family": "spacer",
+   "break": {
+    "type": "radial_wedge",
+    "angle_deg": 248.43352891972958
+   },
+   "true_d": 9.16,
+   "naive_extent_d": 10.13475010688818,
+   "circle_detector_d": 9.20417568744527,
+   "completed_d": 9.407271338330323,
+   "arc_coverage_deg": 350.0
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid010",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 155.5331773632549
+   },
+   "true_d": 36.65,
+   "naive_extent_d": 38.04856721662939,
+   "circle_detector_d": 37.660331427046295,
+   "completed_d": 37.77471229544897,
+   "arc_coverage_deg": 320.0
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid000",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 115.04122389346223
+   },
+   "true_d": 14.5,
+   "naive_extent_d": 16.765533672580705,
+   "circle_detector_d": 15.37258990407891,
+   "completed_d": 15.384821351971425,
+   "arc_coverage_deg": 270.0
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid005",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 156.31413731194067
+   },
+   "true_d": 30.94,
+   "naive_extent_d": 32.52008128702699,
+   "circle_detector_d": 31.850357000657183,
+   "completed_d": 32.04990956379814,
+   "arc_coverage_deg": 310.0
+  },
+  {
+   "kind": "completion",
+   "uid": "spacer_tid008",
+   "family": "spacer",
+   "break": {
+    "type": "radial_wedge",
+    "angle_deg": 241.45828510532928
+   },
+   "true_d": 8.52,
+   "naive_extent_d": 9.290014388266943,
+   "circle_detector_d": 9.319586635706715,
+   "completed_d": 9.240996225614573,
+   "arc_coverage_deg": 360.0
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid016",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 183.4140127552403
+   },
+   "true_d": 20.34,
+   "naive_extent_d": 22.265721244701563,
+   "circle_detector_d": 21.328581440154576,
+   "completed_d": 22.091993500502443,
+   "arc_coverage_deg": 280.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid010",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 60.25683357308754
+   },
+   "true_d": 39.47,
+   "naive_extent_d": 41.00349997389189,
+   "circle_detector_d": 40.382779727098715,
+   "completed_d": 40.37318702157057,
+   "arc_coverage_deg": 310.0
+  },
+  {
+   "kind": "completion",
+   "uid": "wheel_grooved_tid018",
+   "family": "wheel_grooved",
+   "break": {
+    "type": "rim_chip",
+    "angle_deg": 162.4201913803455
+   },
+   "true_d": 36.3,
+   "naive_extent_d": 38.20231927389125,
+   "circle_detector_d": 36.97626520807566,
+   "completed_d": 37.732459897188285,
+   "arc_coverage_deg": 270.0
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid013",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 20.547079777561233
+   },
+   "true_d": 34.66,
+   "naive_extent_d": 36.46094847031959,
+   "circle_detector_d": 35.959236772311144,
+   "completed_d": 36.48384846899358,
+   "arc_coverage_deg": 280.0
+  },
+  {
+   "kind": "completion",
+   "uid": "cap_round_tid019",
+   "family": "cap_round",
+   "break": {
+    "type": "skirt_segment",
+    "angle_deg": 270.0083074378886
+   },
+   "true_d": 19.59,
+   "naive_extent_d": 21.776466643826577,
+   "circle_detector_d": 20.664585434861223,
+   "completed_d": 20.668928433341318,
+   "arc_coverage_deg": 330.0
+  },
+  {
+   "kind": "completion",
+   "uid": "knob_dshaft_tid017",
+   "family": "knob_dshaft",
+   "break": {
+    "type": "rim_chunk",
+    "angle_deg": 253.32894239838157
+   },
+   "true_d": 21.58,
+   "naive_extent_d": 23.43776537492011,
+   "circle_detector_d": 22.14679464365936,
+   "completed_d": 22.030350983608894,
+   "arc_coverage_deg": 270.0
+  },
+  {
+   "kind": "completion",
+   "uid": "cap_round_tid020",
+   "family": "cap_round",
+   "break": {
+    "type": "skirt_segment",
+    "angle_deg": 282.67579332887163
+   },
+   "true_d": 19.41,
+   "naive_extent_d": 20.228681926826944,
+   "circle_detector_d": 20.06602166753183,
+   "completed_d": 19.957603750519503,
+   "arc_coverage_deg": 360.0
+  },
+  {
+   "kind": "completion",
+   "uid": "cap_round_tid016",
+   "family": "cap_round",
+   "break": {
+    "type": "skirt_segment",
+    "angle_deg": 129.89400059867936
+   },
+   "true_d": 25.259999999999998,
+   "naive_extent_d": 28.174781872057423,
+   "circle_detector_d": 27.061284026909117,
+   "completed_d": 27.018098469599586,
+   "arc_coverage_deg": 300.0
+  }
+ ]
+}

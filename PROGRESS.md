@@ -1,14 +1,14 @@
 # PROGRESS
 
-**Single next action:** M2 — build the synthetic dataset engine (`spare/synth/build_dataset.py`: ≥50k train programs + repr text, frozen splits with checksums) and the verifier agreement benchmark.
+**Single next action:** M4 — run the generation baselines (`bench/m4_baselines.py`) on frozen test families.
 
 | Milestone | Status | Evidence |
 |---|---|---|
-| M0 Bootstrap + prior work | in-progress | docs/PRIOR_WORK.md (94 verified entries), ENVIRONMENT.md, DECISIONS.md D-001..D-012, CI config, 50 tests green |
-| M1 Capture kit + metrology | todo | |
-| M2 Synthetic data engine + verifiers | in-progress | 12 families (spare/synth/families), all verifiers + held-out variants (spare/verifiers), tests/test_verifiers.py |
-| M3 Features, mating, completion, tolerance | todo (tolerance engine started: spare/features/tolerance.py) | |
-| M4 Baselines | todo | |
+| M0 Bootstrap + prior work | done | docs/PRIOR_WORK.md, ENVIRONMENT.md, DECISIONS.md, CI (`make ci` green) |
+| M1 Capture kit + metrology | done (synthetic) / awaiting-human (real) | capture/scale_card_A4.pdf, capture/CAPTURE_GUIDE.md, results/m1/metrology_synth.json (E-M1-1) |
+| M2 Synthetic data engine + verifiers | done | results/m2/dataset_stats.json (E-M2-1), results/m2/verifier_agreement.json (E-M2-2) |
+| M3 Features, mating, completion, tolerance | done (synthetic) / awaiting-human (real) | results/m3/inference.json (E-M3-1), results/m3/render.json (E-M3-2) |
+| M4 Baselines | in-progress | |
 | M5 SFT + verifier-RL | todo | |
 | M6 Strength & printability optimization | todo | |
 | M7 Print-test feedback loop | todo | |
@@ -16,18 +16,16 @@
 | M9 Real-world benchmark | todo (expected awaiting-human) | |
 | M10 Integration, release, write-up | todo | |
 
-## M0 plan
-- [x] Environment probe → ENVIRONMENT.md; fallback rungs → DECISIONS.md D-001..D-004
-- [x] Prior-work review with verified citations → docs/PRIOR_WORK.md (spot-checked by hand: 2609.34494, 2610.26861, 2505.19713)
-- [x] Repo skeleton, pyproject with pinned deps, Makefile, CI workflow, Dockerfile
-- [x] HUMAN_TODO.md shopping list and collection guide
-- [ ] `make ci` green locally (lint + mypy + tests) → then M0 done
+## M4 plan
+- Generators × inputs on frozen test families (180 parts) plus test_id (train families, held-out instances):
+  - inputs: `spare` repr (caliper measurements + mating inference + tolerance engine) and `similarity` repr (measured original geometry copied).
+  - generators: untuned Qwen2.5-Coder 1.5B and 7B (zero-shot, few-shot from train families), best-of-N (N=8) with primary verifiers on the *inferred* task (D-019), template oracle (upper bound).
+  - geometry-similarity references: exact-original "perfect scan" (upper bound for any scan-to-mesh / image-to-3D method), visual-hull scan-to-mesh from synthetic photos.
+- Accept: held-out-verifier fit/print/strength/editability rates with CIs per baseline.
 
-## M2 plan (acceptance: ≥50k synthetic programs; verifier unit tests pass; primary vs held-out agreement reported)
-- [x] Procedural families with programs, mating, fit specs, probes, strength, feature graph, breakage
-- [x] Verifiers: geometry/validity, fit (OCCT), printability (geometric), strength (analytic), editability (static)
-- [x] Held-out: fit (mesh + manifold), probes (mesh), printability (PrusaSlicer), strength (FEA), editability (functional)
-- [x] Unit tests on known-good and adversarial parts
-- [ ] Dataset builder (≥50k train programs), frozen splits with checksums
-- [ ] Rendered photos on virtual scale card (needs M1 card)
-- [ ] Verifier agreement benchmark → results/m2/
+## M5 plan
+- SFT (mlx_lm LoRA), curriculum stage1 → stage2, on train families + generic compositions.
+- GRPO on MLX with composite primary reward; KL to SFT reference; length penalty; exec-error reward 0.
+- Ablations: −fit, −strength, −edit reward; SFT-only; RL-only (from base). Reward-hacking audit.
+
+## M6–M10: see the milestone list in the build prompt; plans get written here as each starts.

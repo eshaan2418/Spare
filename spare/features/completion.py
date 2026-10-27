@@ -40,7 +40,7 @@ def ransac_circle(P: np.ndarray, thr: float = 0.35, iters: int = 400, seed: int 
         inl = np.abs(np.hypot(P[:, 0] - c[0], P[:, 1] - c[1]) - c[2]) < thr
         if bi is None or inl.sum() > bi.sum():
             best, bi = c, inl
-    if best is None or bi.mean() < min_frac:
+    if best is None or bi is None or bi.mean() < min_frac:
         return None
     Q = P[bi]
     A = np.c_[2 * Q, np.ones(len(Q))]

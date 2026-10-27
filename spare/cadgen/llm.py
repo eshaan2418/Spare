@@ -45,7 +45,8 @@ class LLM:
 
         self.model_id = model_id
         self.adapter_path = adapter_path
-        self.model, self.tokenizer = load(model_id, adapter_path=adapter_path)
+        loaded = load(model_id, adapter_path=adapter_path)
+        self.model, self.tokenizer = loaded[0], loaded[1]
 
     def encode_chat(self, messages: list[dict], add_generation_prompt: bool = True) -> list[int]:
         return self.tokenizer.apply_chat_template(messages, add_generation_prompt=add_generation_prompt,
@@ -56,14 +57,15 @@ class LLM:
         from mlx_lm.sample_utils import make_sampler
 
         sampler = make_sampler(temp=cfg.temp, top_p=cfg.top_p if cfg.temp > 0 else 0.0)
-        texts, ids = [], []
+        texts: list[str] = []
+        ids: list[list[int]] = []
         for i in range(0, len(prompts), cfg.batch_size):
             chunk = prompts[i:i + cfg.batch_size]
             r = batch_generate(self.model, self.tokenizer, chunk, max_tokens=cfg.max_tokens, sampler=sampler,
                                return_token_ids=return_ids, completion_batch_size=cfg.batch_size)
             texts += r.texts
             if return_ids:
-                ids += r.token_ids
+                ids += r.token_ids or []
         return (texts, ids) if return_ids else texts
 
 
