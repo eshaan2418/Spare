@@ -21,3 +21,5 @@ results/**/*.gcode
 results/**/*.npz
 *.safetensors
 .env
+data/sft/
+data/sft_probe/

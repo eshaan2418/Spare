@@ -14,6 +14,8 @@ import numpy as np
 
 from spare.cadgen.llm import SYSTEM
 from spare.common.provenance import ROOT, read_jsonl
+from spare.features.infer import infer_record
+from spare.synth.registry import get as get_family
 
 
 def to_chat(repr_text: str, program: str) -> dict:
@@ -29,6 +31,8 @@ def main():
     ap.add_argument("--n-family", type=int, default=24000)
     ap.add_argument("--n-compose", type=int, default=12000)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--observed-frac", type=float, default=0.5,
+                    help="fraction of family rows whose input is a simulated noisy observation (matches eval)")
     ap.add_argument("--out", default="data/sft")
     a = ap.parse_args()
     rng = np.random.default_rng(a.seed)
@@ -37,7 +41,15 @@ def main():
     fam = read_jsonl("data/synthetic/train.jsonl")
     assert all(r["split"] == "train" for r in fam)
     pick = rng.choice(len(fam), min(a.n_family, len(fam)), replace=False)
-    rows = [(fam[int(i)]["family"], fam[int(i)]["repr"], fam[int(i)]["program"]) for i in pick]
+    rows = []
+    for j, i in enumerate(pick):
+        r = fam[int(i)]
+        if rng.random() < a.observed_frac:
+            # same measurement channel as evaluation (caliper condition), program on the inferred design
+            x = infer_record(r, "caliper", "full", seed=a.seed * 100003 + j)
+            rows.append((r["family"], x["repr"], get_family(r["family"]).program(x["design_hat"], r["style"])))
+        else:
+            rows.append((r["family"], r["repr"], r["program"]))
     comp_path = ROOT / "data" / "synthetic" / "compose.jsonl"
     if comp_path.exists() and a.n_compose:
         comp = read_jsonl(comp_path)
